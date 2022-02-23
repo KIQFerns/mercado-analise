@@ -13,7 +13,6 @@ const router = express.Router();
 //mongoose.connect(config.connectionString);
 
 // Carrega os Models
-const User = require('./models/user');
 
 // configura as views como ejs
 app.set('view engine', 'ejs');
