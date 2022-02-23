@@ -68,8 +68,6 @@ exports.getuser = async (req, res, next) => {
 
       global.first_name = res.data.first_name;
       global.last_name = res.data.last_name;
-
-      console.log(global.first_name);
     })
     .catch(function (error) {
       console.log(error);

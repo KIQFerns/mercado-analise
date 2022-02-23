@@ -10,7 +10,7 @@ const app = express();
 const router = express.Router();
 
 // Connecta ao banco
-mongoose.connect(config.connectionString);
+//mongoose.connect(config.connectionString);
 
 // Carrega os Models
 const User = require('./models/user');
@@ -22,11 +22,13 @@ app.set('views', './scr/views');
 //carrega as rotas
 const loginRoute = require('./routes/login-route');
 const indexRoute = require('./routes/index-route');
+const sitesRoute = require('./routes/site-route');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/login', loginRoute);
 app.use('/', indexRoute);
+app.use('/login', loginRoute);
+app.use('/sites', sitesRoute);
 
 module.exports = app;
