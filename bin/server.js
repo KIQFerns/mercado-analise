@@ -4,7 +4,7 @@ const app = require('../scr/app');
 const http = require('http');
 const debug = require('debug')('api-meli:server');
 
-const port = 3000;
+const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 const server = http.createServer(app);
@@ -13,6 +13,20 @@ server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 console.log(' Api rodando na porta:' + port);
+
+function normalizePort(val) {
+  const port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    return val;
+  }
+
+  if (port >= 0) {
+    return port;
+  }
+
+  return false;
+}
 
 function onError(error) {
     if (error.syscall !== 'listen') {
