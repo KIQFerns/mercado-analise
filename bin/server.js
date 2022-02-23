@@ -4,7 +4,7 @@ const app = require('../scr/app');
 const http = require('http');
 const debug = require('debug')('api-meli:server');
 
-const port = 3000;
+const port = 5000;
 app.set('port', port);
 
 const server = http.createServer(app);
