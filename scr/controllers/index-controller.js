@@ -8,10 +8,10 @@ exports.gettoken = async (req, res, next) => {
 
   var data = JSON.stringify({
     "grant_type": "authorization_code",
-    "client_id": "1571140962799575",
-    "client_secret": "EkDvO67BLSPeraHQKjT05g8vtCxDkTBW",
+    "client_id": process.env.CLIENT_ID,
+    "client_secret": process.env.CLIENT_SECRET,
     "code": req.query.code,
-    "redirect_uri": "http://localhost:3000/"
+    "redirect_uri": process.env.REDIRECT_URI
   });
 
   var config = {
