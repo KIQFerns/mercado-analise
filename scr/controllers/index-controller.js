@@ -72,10 +72,12 @@ exports.getuser = async (req, res, next) => {
     .catch(function (error) {
       console.log(error);
     });
-  
-    res.render('index', {
-      user_id: global.user_id,
-      first_name: global.first_name,
-      last_name: global.last_name
-    });   
+    
+    res.render('pages/index');
+
+    //res.render('index', {
+    //  user_id: global.user_id,
+    //  first_name: global.first_name,
+    //  last_name: global.last_name
+    //});   
 };
