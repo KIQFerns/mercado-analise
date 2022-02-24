@@ -57,7 +57,7 @@ exports.getattribute = async (req, res, next) => {
         .then(function (res) {
             //console.log(JSON.stringify(res.data));
             global.data = [];
-            global.data = res.data;
+            global.data = JSON.stringify(res.data);
 
         })
         .catch(function (error) {
