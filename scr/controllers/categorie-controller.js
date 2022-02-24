@@ -23,7 +23,7 @@ exports.getcategorie = async (req, res, next) => {
         .then(function (res) {
             console.log(JSON.stringify(res.data));
             global.data = [];
-            global.edata = res.data;
+            global.data = res.data;
         })
         .catch(function (error) {
             console.log(error);
