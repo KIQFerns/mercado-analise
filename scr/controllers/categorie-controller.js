@@ -1,6 +1,5 @@
 'use strict';
 
-
 const https = require('https');
 var axios = require('axios');
 
@@ -30,5 +29,6 @@ exports.getcategorie = async (req, res, next) => {
         console.log(error);
       });
     
-      res.render('pages/categorie', {categoriedata: global.categoriedata } );  
+      res.render('pages/categorie', {categoriedata: global.categoriedata } );
+      return; 
   };
