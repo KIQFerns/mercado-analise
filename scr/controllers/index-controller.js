@@ -38,13 +38,7 @@ exports.gettoken = async (req, res, next) => {
     })
     .catch(function (error) {
       console.log(error);
-//      res.render('login', {
-//        title: "API MeLi - análise de Mercado",
-//        version: "0.0.2",
-//        CLIENT_ID: process.env.CLIENT_ID,
-//        REDIRECT_URI: process.env.REDIRECT_URI
-//      });
-return next();
+      return next();
     });
 };
 
@@ -75,11 +69,5 @@ exports.getuser = async (req, res, next) => {
       console.log(error);
     });
     
-    res.render('pages/index');
-
-    //res.render('index', {
-    //  user_id: global.user_id,
-    //  first_name: global.first_name,
-    //  last_name: global.last_name
-    //});   
+    res.render('pages/index'); 
 };
