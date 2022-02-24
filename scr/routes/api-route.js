@@ -4,7 +4,10 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/api-controller');
 
-//envia dados sobre usuário para a página sites
+//envia dados sobre os sites para a página sites
 router.get('/', controller.get);
+
+//envia dados sobre asd categorias para a página sites
+router.get('/categorie', controller.getcategorie);
 
 module.exports = router;
