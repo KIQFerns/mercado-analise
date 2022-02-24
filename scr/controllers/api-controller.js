@@ -60,6 +60,6 @@ exports.getcategorie = async (req, res, next) => {
       console.log(error);
     });
   
-    res.render('pages/api', {categoriedata: global.categoriedata } );  
+    res.render('pages/categorie', {categoriedata: global.categoriedata } );  
     return; 
 };

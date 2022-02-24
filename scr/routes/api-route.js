@@ -8,6 +8,6 @@ const controller = require('../controllers/api-controller');
 router.get('/', controller.get);
 
 //envia dados sobre asd categorias para a página sites
-router.get('/', controller.getcategorie);
+router.get('/categories', controller.getcategorie);
 
 module.exports = router;
