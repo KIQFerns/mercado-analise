@@ -23,12 +23,13 @@ exports.get = async (req, res, next) => {
   axios(config)
     .then(function (res) {
       console.log(JSON.stringify(res.data));
-      global.data = [];
-      global.data = res.data;
+      global.sitedata = [];
+      global.sitedata = res.data;
     })
     .catch(function (error) {
       console.log(error);
     });
   
-    res.render('pages/site', {data: global.data } );   
+    res.render('pages/api', {data: global.sitedata } );  
+    return; 
 };
