@@ -29,6 +29,6 @@ exports.getcategorie = async (req, res, next) => {
             console.log(error);
         });
 
-    res.render('pages/categorie', { categoriedata: global.data });
+    res.render('pages/categorie', { data: global.data });
     return;
 };
