@@ -56,14 +56,14 @@ exports.getattribute = async (req, res, next) => {
     axios(config)
         .then(function (res) {
             console.log(JSON.stringify(res.data));
-            global.data = [];
-            global.data = res.data;
+            global.categoriedata = [];
+            global.categoriedata = res.data;
 
         })
         .catch(function (error) {
             console.log(error);
         });
 
-    res.render('pages/categorie-attribute', { data: global.data });
+    res.render('pages/categorie-attribute', { data: global.categoriedata });
     return;
 };
