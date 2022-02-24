@@ -28,5 +28,5 @@ exports.get = async (req, res, next) => {
       console.log(error);
     });
   
-    res.render('site', {data: global.sitedata } );   
+    res.render('pages/site', {data: global.sitedata } );   
 };
