@@ -3,6 +3,7 @@
 const https = require('https');
 var axios = require('axios');
 
+//usa o code para gerar o token
 exports.gettoken = async (req, res, next) => {
   var code = req.query.code
 
@@ -37,12 +38,12 @@ exports.gettoken = async (req, res, next) => {
     })
     .catch(function (error) {
       console.log(error);
-      res.render('login', {
-        title: "API MeLi - análise de Mercado",
-        version: "0.0.2",
-        CLIENT_ID: process.env.CLIENT_ID,
-        REDIRECT_URI: process.env.REDIRECT_URI
-      });
+//      res.render('login', {
+//        title: "API MeLi - análise de Mercado",
+//        version: "0.0.2",
+//        CLIENT_ID: process.env.CLIENT_ID,
+//        REDIRECT_URI: process.env.REDIRECT_URI
+//      });
     });
 };
 
