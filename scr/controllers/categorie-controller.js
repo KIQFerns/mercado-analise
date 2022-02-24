@@ -55,9 +55,9 @@ exports.getattribute = async (req, res, next) => {
 
     axios(config)
         .then(function (res) {
-            //console.log(JSON.stringify(res.data));
+            console.log(JSON.stringify(res.data));
             global.data = [];
-            global.data = JSON.stringify(res.data);
+
         })
         .catch(function (error) {
             console.log(error);
