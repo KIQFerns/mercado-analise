@@ -69,5 +69,9 @@ exports.getuser = async (req, res, next) => {
       console.log(error);
     });
     
-    res.render('pages/index'); 
+    res.render('pages/index', {
+        user_id: global.user_id,
+        first_name: global.first_name,
+        last_name: global.last_name
+      });
 };
