@@ -57,13 +57,13 @@ exports.getattribute = async (req, res, next) => {
         .then(function (res) {
             //console.log(JSON.stringify(res.data));
             global.data = [];
-            global.data = JSON.stringify(res.data.results);
+            global.data = JSON.stringify(res.data);
 
         })
         .catch(function (error) {
             console.log(error);
         });
 
-    res.render('pages/categorie-attribute', { data: global.data });
+    res.render('pages/categorie-attribute', { data: global.data.results });
     return;
 };
