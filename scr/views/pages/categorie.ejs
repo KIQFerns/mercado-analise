@@ -16,14 +16,13 @@
             <th>id</th>
             <th>name</th>
         </tr>
-    <% data.forEach(function(categoriedata){ %>
+    <% data.forEach(function(data){ %>
         <tr>
-            <td><%- categoriedata.id %></td>
-            <td><%- categoriedata.name %></td>
+            <td><%- data.id %></td>
+            <td><%- data.name %></td>
           </tr>
       <% }); %>
     </table>
-    <h2>categories ...</h2>
 </main>
 
 <footer>
