@@ -10,7 +10,20 @@
 </header>
 
 <main>
-    <%- data %>
+    <table>
+        <tr>
+          <th>id</th>
+             <th>título</th>
+             <th>preço</th>
+         </tr>
+     <% data.forEach(function(data.results){ %>
+         <tr>
+             <td><%- data.results.id %></td>
+             <td><%- data.results.title %></td>
+             <td><%- data.results.price %></td>
+           </tr>
+       <% }); %>
+     </table>
 </main>
 
 <footer>
