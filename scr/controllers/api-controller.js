@@ -31,5 +31,4 @@ exports.get = async (req, res, next) => {
     });
   
     res.render('pages/api', {data: global.sitedata } );  
-    return; 
 };
