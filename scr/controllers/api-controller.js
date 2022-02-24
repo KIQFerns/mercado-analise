@@ -61,5 +61,4 @@ exports.getcategorie = async (req, res, next) => {
     });
   
     res.render('pages/categorie', {categoriedata: global.categoriedata } );  
-    return; 
 };
