@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+        </tr>
+    <% data.forEach(function(data){ %>
+        <tr>
+            <td><%- data.results.id %></td>
+            <td><%- data.results.title %></td>
+            <td><%- data.results.price %></td>
+          </tr>
+      <% }); %>
+    </table>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
