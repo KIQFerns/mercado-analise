@@ -25,7 +25,7 @@ const apiRoute = require('./routes/api-route');
 const categorieRoute = require('./routes/categorie-route');
 
 app.use(bodyParser.json({
-    limit: '5mb'
+    limit: '1gb'
 }));
 app.use(bodyParser.urlencoded({ extended: false }));
 
