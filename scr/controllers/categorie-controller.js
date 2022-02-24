@@ -65,5 +65,6 @@ exports.getattribute = async (req, res, next) => {
         });
 
     res.render('pages/categorie-attribute', { data: global.data.results });
+    console.log(JSON.stringify(res.data.result));
     return;
 };
