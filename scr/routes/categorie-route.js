@@ -5,7 +5,10 @@ const router = express.Router();
 const controller = require('../controllers/categorie-controller.js');
 
 
-// pega o token e autentica
+// pega a lista de categorias
 router.get('/', controller.getcategorie);
+
+// pega atributos da categoria por categoria
+router.get('/:id', controller.getattribute);
 
 module.exports = router;
