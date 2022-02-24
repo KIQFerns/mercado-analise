@@ -22,6 +22,7 @@ app.set('views', './scr/views');
 const loginRoute = require('./routes/login-route');
 const indexRoute = require('./routes/index-route');
 const apiRoute = require('./routes/api-route');
+const categorieRoute = require('./routes/categorie-route');
 
 app.use(bodyParser.json({
     limit: '5mb'
@@ -39,5 +40,6 @@ app.use(function (req, res, next) {
 app.use('/', indexRoute);
 app.use('/login', loginRoute);
 app.use('/api', apiRoute);
+app.use('/categories', categorieRoute);
 
 module.exports = app;
