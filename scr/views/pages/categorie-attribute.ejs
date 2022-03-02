@@ -10,7 +10,18 @@
 </header>
 
 <main>
-    <%= datacategorie.children_categories %>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+        </tr>
+    <% data.forEach(function(children_categories){ %>
+        <tr>
+            <td><%- data.children_categories.id %></td>
+            <td><%- data.children_categories.name %></td>
+          </tr>
+      <% }); %>
+    </table>
 </main>
 
 <footer>
