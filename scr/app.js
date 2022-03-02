@@ -4,13 +4,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv').config();
 const mongoose = require('mongoose');
-const config = require('./config');
+//const config = require('./config');
 
 const app = express();
 const router = express.Router();
 
 //Connecta ao banco
-mongoose.connect(config.connectionString);
+//mongoose.connect(config.connectionString);
 
 // Carrega os Models
 
