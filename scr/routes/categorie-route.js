@@ -11,6 +11,9 @@ router.get('/', controller.getcategorie);
 // pega atributos da categoria por categoria
 router.get('/:id', controller.getattribute);
 
+// itens da categoria por categoria
+router.get('/:id/items', controller.getitems);
+
 // pega mais vendidos da categoria por categoria
 router.get('/:id/trends', controller.gettrends);
 
