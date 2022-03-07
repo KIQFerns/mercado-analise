@@ -14,17 +14,14 @@
         <tr>
             <th>id</th>
             <th>name</th>
-            <th>&nbsp;&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;&nbsp;</th>
         </tr>
     <% data.forEach(function(data){ %>
         <tr>
             <td><%- data.id %></td>
-            <td><a href="/categories/<%- data.id %>"><%- data.name %></a></td>
-            <td><a href="/categories/<%- data.id %>/trends">Tendencias</a></td>
-            <td><a href="/categories/<%- data.id %>/items">Items</a></td>
-            <td><a href="/categories/<%- data.id %>/20mais">Items mais vendidos</a></td>
+            <td><a href="/categories/<%- data.id %>"><%- data.name %></a>&nbsp;&nbsp;&nbsp;</td>
+            <td><a href="/categories/<%- data.id %>/trends">Tendencias</a>&nbsp;&nbsp;&nbsp;</td>
+            <td><a href="/categories/<%- data.id %>/items">Items</a>&nbsp;&nbsp;&nbsp;</td>
+            <td><a href="/categories/<%- data.id %>/20mais">Items mais vendidos</a>&nbsp;&nbsp;&nbsp;</td>
           </tr>
       <% }); %>
     </table>
