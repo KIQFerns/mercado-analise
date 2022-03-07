@@ -131,6 +131,6 @@ exports.getmais = async (req, res, next) => {
             console.log(error);
         });
 
-    res.render('pages/20mais', { datamais: global.maisdata });
+    res.render('pages/categorie-20mais', { datamais: global.maisdata });
     return;
 };
