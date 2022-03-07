@@ -97,7 +97,7 @@ exports.getitems = async (req, res, next) => {
             console.log(error);
         });
 
-    res.render('pages/trends', { dataitems: global.itemsdata });
+    res.render('pages/categorie-items', { dataitems: global.itemsdata });
     return;
 };
 
