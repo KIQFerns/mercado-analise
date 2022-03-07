@@ -17,4 +17,7 @@ router.get('/:id/items', controller.getitems);
 // pega mais vendidos da categoria por categoria
 router.get('/:id/20mais', controller.getmais);
 
+// pega mais vendidos da categoria por categoria
+router.get('/:id/trends', controller.gettrends);
+
 module.exports = router;
