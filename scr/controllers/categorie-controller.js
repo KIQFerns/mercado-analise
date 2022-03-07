@@ -73,7 +73,7 @@ exports.getitems = async (req, res, next) => {
     var token = global.access_token;
     console.log(bearer + token);
 
-    var url = 'https://api.mercadolibre.com/sites/MLB/search?search_type=scan&category=';
+    var url = 'https://api.mercadolibre.com/sites/MLB/search?category=';
     var id = req.params.id;
     console.log(url + id);
 
@@ -102,7 +102,7 @@ exports.getitems = async (req, res, next) => {
 };
 
 // conteudo /mais vendidos de categorias
-exports.gettrends = async (req, res, next) => {
+exports.getmais = async (req, res, next) => {
     var bearer = 'Bearer ';
     var token = global.access_token;
     console.log(bearer + token);
@@ -124,13 +124,13 @@ exports.gettrends = async (req, res, next) => {
     axios(config)
         .then(function (res) {
             console.log(JSON.stringify(res.data));
-            global.trendsdata = [];
-            global.trendsdata = res.data;
+            global.maisdata = [];
+            global.maisdata = res.data;
         })
         .catch(function (error) {
             console.log(error);
         });
 
-    res.render('pages/trends', { datatrends: global.trendsdata });
+    res.render('pages/20mais', { datamais: global.maisdata });
     return;
 };
