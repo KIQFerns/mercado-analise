@@ -90,14 +90,14 @@ exports.getitems = async (req, res, next) => {
     axios(config)
         .then(function (res) {
             console.log(JSON.stringify(res.data));
-            //global.trendsdata = [];
-            //global.trendsdata = res.data;
+            global.itemsdata = [];
+            global.itemsdata = res.data;
         })
         .catch(function (error) {
             console.log(error);
         });
 
-    //res.render('pages/trends', { datatrends: global.trendsdata });
+    res.render('pages/trends', { dataitems: global.itemsdata });
     return;
 };
 
