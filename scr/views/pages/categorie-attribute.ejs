@@ -10,18 +10,26 @@
 </header>
 
 <main>
+    <table>
     <tr>
         <th>id</th>
         <th>name</th>
         <th>Volume de itens</th>
     </tr>
-    <% for(var item in datacategorie.children_categories){%> 
+    <% for(var item in datacategorie.children_categories){%>
         <tr>
-        <td><%= datacategorie.children_categories[item].id%></td>
-        <td><%= datacategorie.children_categories[item].name%></td>
-        <td><%= datacategorie.children_categories[item].total_items_in_this_category%></td>
-    </tr>
-    <% } %>
+            <td>
+                <%= datacategorie.children_categories[item].id%>
+            </td>
+            <td>
+                <%= datacategorie.children_categories[item].name%>
+            </td>
+            <td>
+                <%= datacategorie.children_categories[item].total_items_in_this_category%>
+            </td>
+        </tr>
+        <% } %>
+    </table>
 </main>
 
 <footer>
