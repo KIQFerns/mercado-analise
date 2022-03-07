@@ -10,16 +10,13 @@
 </header>
 
 <main>
-    <table>
-        <tr>
-            <th>termo de busca</th>
-        </tr>
+    <h2>Termos mais buscados</h2>
     <% datatrends.forEach(function(datatrends){ %>
-        <tr>
-            <td><a href="/categories/<%- datatrends.url %>"><%- datatrends.keyword %></a></td>
-          </tr>
+        <ul>
+            <li><a href="/categories/<%- datatrends.url %>"><%- datatrends.keyword %></a></li>
+        </ul>
       <% }); %>
-    </table>
+
 </main>
 
 <footer>
