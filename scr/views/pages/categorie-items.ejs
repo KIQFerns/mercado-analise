@@ -14,7 +14,7 @@
     <tr>
         <th>id</th>
         <th>nome</th>
-        <th>link</th>
+        <th>preço</th>
         <th>vendedor</th>        
     </tr>
     <% for(var item in dataitems.results){%>
@@ -23,10 +23,10 @@
                 <%= dataitems.results[item].id%>
             </td>
             <td>
-                <%= dataitems.results[item].title%>
+                <a href="<%= dataitems.results[item].permalink%>"><%= dataitems.results[item].title%></a>
             </td>
             <td>
-                <%= dataitems.results[item].permalink%>
+                <%= dataitems.results[item].price%>
             </td>
             <td>
                 <%= dataitems.results[item].seller.id%>
