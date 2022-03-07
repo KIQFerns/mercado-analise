@@ -97,6 +97,6 @@ exports.gettrends = async (req, res, next) => {
             console.log(error);
         });
 
-    //res.render('pages/categorie-attribute', { datatrends: global.trendsdata });
+    res.render('pages/trends', { datatrends: global.trendsdata });
     return;
 };
