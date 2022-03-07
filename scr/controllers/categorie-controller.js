@@ -68,7 +68,7 @@ exports.getattribute = async (req, res, next) => {
 };
 
 // conteudo /items de categorias
-exports.gettrends = async (req, res, next) => {
+exports.getitems = async (req, res, next) => {
     var bearer = 'Bearer ';
     var token = global.access_token;
     console.log(bearer + token);
