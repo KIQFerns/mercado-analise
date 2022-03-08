@@ -18,7 +18,6 @@
             <th>categoria</th>
             <th>reputação</th>
         </tr>
-    <% dataitem.forEach(function(dataitem){ %>
         <tr>
             <td><%- dataitem.id %>&nbsp;&nbsp;&nbsp;</td>
             <td><a href="<%- dataitem.permalink %>"><%- dataitem.title %></a>&nbsp;&nbsp;&nbsp;</td>
@@ -26,7 +25,6 @@
             <td><%- dataitem.category_id %>&nbsp;&nbsp;&nbsp;</td>
             <td><%- dataitem.listing_type_id %>&nbsp;&nbsp;&nbsp;</td>
           </tr>
-      <% }); %>
     </table>
 </main>
 
