@@ -10,22 +10,13 @@
 </header>
 
 <main>
-    <table>
-        <tr>
-            <th>id</th>
-            <th>name</th>
-            <th>preço</th>
-            <th>categoria</th>
-            <th>reputação</th>
-        </tr>
-        <tr>
-            <td><%- dataitem.id %>&nbsp;&nbsp;&nbsp;</td>
-            <td><a href="<%- dataitem.permalink %>"><%- dataitem.title %></a>&nbsp;&nbsp;&nbsp;</td>
-            <td><%- dataitem.price %>&nbsp;&nbsp;&nbsp;</td>
-            <td><%- dataitem.category_id %>&nbsp;&nbsp;&nbsp;</td>
-            <td><%- dataitem.listing_type_id %>&nbsp;&nbsp;&nbsp;</td>
-          </tr>
-    </table>
+        <ul>
+            <li><%- dataitem.id %>&nbsp;&nbsp;&nbsp;</li>
+            <li><a href="<%- dataitem.permalink %>"><%- dataitem.title %></a>&nbsp;&nbsp;&nbsp;</li>
+            <li><%- dataitem.price %>&nbsp;&nbsp;&nbsp;</li>
+            <li><%- dataitem.category_id %>&nbsp;&nbsp;&nbsp;</li>
+            <li><%- dataitem.listing_type_id %>&nbsp;&nbsp;&nbsp;</li>
+        </ul>
 </main>
 
 <footer>
