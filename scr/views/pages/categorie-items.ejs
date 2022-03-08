@@ -29,7 +29,7 @@
                 <%= dataitems.results[item].price%>
             </td>
             <td>
-                <%= dataitems.results[item].seller.id%>
+                <a href="/users/<%= dataitems.results[item].seller.id%>"></a><%= dataitems.results[item].seller.id%></a>
             </td>
         </tr>
         <% } %>
