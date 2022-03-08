@@ -23,6 +23,7 @@ const loginRoute = require('./routes/login-route');
 const indexRoute = require('./routes/index-route');
 const apiRoute = require('./routes/api-route');
 const categorieRoute = require('./routes/categorie-route');
+const itemRoute = require('./routes/item-route');
 
 app.use(bodyParser.json({
     limit: '1gb'
@@ -41,5 +42,6 @@ app.use('/', indexRoute);
 app.use('/login', loginRoute);
 app.use('/api', apiRoute);
 app.use('/categories', categorieRoute);
+app.use('/items', itemRoute);
 
 module.exports = app;
