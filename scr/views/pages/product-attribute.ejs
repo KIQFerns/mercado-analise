@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+        <ul>
+            <li><%- dataproduct.id %>;</li>
+            <li><a href="<%- dataproduct.permalink %>"><%- dataproduct.name %></a></li>
+            <li><%- dataproduct.domain_id %></li>
+            <li><%- dataproduct.attributes.value_id %></li>
+        </ul>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
