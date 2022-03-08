@@ -18,7 +18,7 @@
             <th>categoria</th>
             <th>reputação</th>
         </tr>
-    <% itemdata.forEach(function(itemdata){ %>
+        <% for(var itemdata in itemdata){%>
         <tr>
             <td><%- itemdata.id %>&nbsp;&nbsp;&nbsp;</td>
             <td><a href="<%- itemdata.permalink %>"><%- itemdata.title %></a>&nbsp;&nbsp;&nbsp;</td>
@@ -26,7 +26,7 @@
             <td><%- itemdata.category_id %>&nbsp;&nbsp;&nbsp;</td>
             <td><%- itemdata.listing_type__id %>&nbsp;&nbsp;&nbsp;</td>
           </tr>
-      <% }); %>
+      <% } %>
     </table>
 </main>
 
