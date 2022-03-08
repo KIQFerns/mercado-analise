@@ -4,7 +4,7 @@ const https = require('https');
 var axios = require('axios');
 
 //usa o code para gerar o token
-exports.gettoken = async (req, res, next) => {
+exports.gettoken = (req, res, next) => {
   var code = req.query.code
 
   var data = JSON.stringify({
@@ -42,7 +42,7 @@ exports.gettoken = async (req, res, next) => {
     });
 };
 
-exports.getuser = async (req, res, next) => {
+exports.getuser = (req, res, next) => {
   var bearer = 'Bearer ';
   var token = global.access_token;
   console.log(bearer + token);

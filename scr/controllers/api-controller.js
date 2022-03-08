@@ -5,7 +5,7 @@ const https = require('https');
 var axios = require('axios');
 
 // conteudo /sites
-exports.get = async (req, res, next) => {
+exports.get = (req, res, next) => {
   var bearer = 'Bearer ';
   var token = global.access_token;
   console.log(bearer + token);
