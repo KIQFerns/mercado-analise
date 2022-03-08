@@ -25,7 +25,7 @@
                 <%= datamais.content[item].id%>
             </td>
             <td>
-                <%= datamais.content[item].type%>
+                <a href="<% if (datamais.content.id == 'ITEM') { %>/items/<%= datamais.content[item].id%><% } else { %>/products/<%= datamais.content[item].id%><% } %>"><%= datamais.content[item].type%></a>
             </td>
         </tr>
         <% } %>
