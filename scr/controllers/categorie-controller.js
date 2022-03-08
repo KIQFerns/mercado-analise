@@ -4,7 +4,7 @@ const https = require('https');
 var axios = require('axios');
 
 // conteudo /categorias
-exports.getcategorie = async (req, res, next) => {
+exports.getcategorie = (req, res, next) => {
     var bearer = 'Bearer ';
     var token = global.access_token;
     console.log(bearer + token);
@@ -34,7 +34,7 @@ exports.getcategorie = async (req, res, next) => {
 };
 
 // conteudo /atributos de categorias
-exports.getattribute = async (req, res, next) => {
+exports.getattribute = (req, res, next) => {
     var bearer = 'Bearer ';
     var token = global.access_token;
     console.log(bearer + token);
@@ -68,7 +68,7 @@ exports.getattribute = async (req, res, next) => {
 };
 
 // conteudo /items de categorias
-exports.getitems = async (req, res, next) => {
+exports.getitems = (req, res, next) => {
     var bearer = 'Bearer ';
     var token = global.access_token;
     console.log(bearer + token);
@@ -102,7 +102,7 @@ exports.getitems = async (req, res, next) => {
 };
 
 // conteudo /mais vendidos de categorias
-exports.getmais = async (req, res, next) => {
+exports.getmais = (req, res, next) => {
     var bearer = 'Bearer ';
     var token = global.access_token;
     console.log(bearer + token);
@@ -136,7 +136,7 @@ exports.getmais = async (req, res, next) => {
 };
 
 // conteudo /termos mais buscados de categorias
-exports.gettrends = async (req, res, next) => {
+exports.gettrends = (req, res, next) => {
     var bearer = 'Bearer ';
     var token = global.access_token;
     console.log(bearer + token);
