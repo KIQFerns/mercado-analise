@@ -33,6 +33,6 @@ exports.getitems = async (req, res, next) => {
             console.log(error);
         });
 
-    res.render('pages/user-attribute', { dataitem: global.itemdata });
+    res.render('pages/visit-item', { dataitem: global.itemdata });
     return;
 };
