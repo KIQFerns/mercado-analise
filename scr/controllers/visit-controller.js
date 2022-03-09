@@ -9,7 +9,7 @@ exports.getitems = async (req, res, next) => {
     var token = global.access_token;
     console.log(bearer + token);
 
-    var url = 'https://api.mercadolibre.com/visits/items/';
+    var url = 'https://api.mercadolibre.com/visits/items?ids=';
     var id = req.params.id;
     console.log(url + id);
 
