@@ -5,6 +5,6 @@ const router = express.Router();
 const controller = require('../controllers/visit-controller.js');
 
 // pega visitas de um produto
-router.getitems('/items/:id', controller.getuser);
+router.get('/items/:id', controller.getitems);
 
 module.exports = router;
