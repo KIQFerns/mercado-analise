@@ -43,13 +43,13 @@ exports.gettoken = (req, res, next) => {
 
       console.log(res.data.access_token);
 
-      next.redirect('/home');
-
     })
     .catch(function (error) {
       console.log(error);
       return next();
     });
+    
+    res.redirect('/home');
 };
 
 //renderiza a página inicial
