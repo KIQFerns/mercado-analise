@@ -33,6 +33,6 @@ exports.getmais = (req, res, next) => {
             console.log(error);
         });
 
-    res.render('pages/categorie-20mais', { datamais: global.maisdata });
+    res.render('pages/highlights-categorie', { datamais: global.maisdata });
     return;
 };

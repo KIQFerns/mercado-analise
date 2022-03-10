@@ -94,6 +94,6 @@ exports.getitems = (req, res, next) => {
           console.log(error);
       });
 
-  res.render('pages/categorie-items', { dataitems: global.itemsdata });
+  res.render('pages/items-categorie', { dataitems: global.itemsdata });
   return;
 };

@@ -33,6 +33,6 @@ exports.gettrends = (req, res, next) => {
             console.log(error);
         });
 
-    res.render('pages/categorie-trends', { datatrends: global.trendsdata });
+    res.render('pages/trends-categorie', { datatrends: global.trendsdata });
     return;
 };

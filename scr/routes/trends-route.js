@@ -5,6 +5,6 @@ const router = express.Router();
 const controller = require('../controllers/trends-controller.js');
 
 // pega mais vendidos da categoria por categoria
-router.get('/:id/trends', controller.gettrends);
+router.get('/:id', controller.gettrends);
 
 module.exports = router;
