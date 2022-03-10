@@ -16,6 +16,7 @@
         <th>nome</th>
         <th>preço</th>
         <th>clicks</th>
+        <th>Vendas</th>
         <th>vendedor</th>        
     </tr>
     <% for(var item in dataitems.results){%>
@@ -31,6 +32,9 @@
             </td>
             <td>
                 <a href="/visits/items/<%= dataitems.results[item].id%>">clicks</a>
+            </td>
+            <td>
+                <%= dataitems.results[item].sold_quantity%>
             </td>
             <td>
                 <a href="/users/<%= dataitems.results[item].seller.id%>"><%= dataitems.results[item].seller.id%></a>
