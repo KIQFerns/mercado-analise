@@ -9,7 +9,7 @@ exports.getitem = (req, res, next) => {
     var token = global.access_token;
     console.log(bearer + token);
 
-    var url = 'https://api.mercadolibre.com/sites/MLB/search?category=';
+    var url = 'https://api.mercadolibre.com/sites/MLB/search?offset=1000&category=';
     var id = req.params.id;
     console.log(url + id);
 
