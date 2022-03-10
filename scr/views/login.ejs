@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <%- include('../partials/head'); %>
 </head>
-<body>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
     <p>Bem vindo à <%= title %>, <b>versão: <%= version %></b></p>
     <br>
     <a href="https://auth.mercadolivre.com.br/authorization?response_type=code&client_id=<%= CLIENT_ID %>&redirect_uri=<%= REDIRECT_URI %>">Entrar</a>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
 </body>
 </html>
