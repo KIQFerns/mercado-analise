@@ -4,7 +4,7 @@ const https = require('https');
 var axios = require('axios');
 
 // conteudo /atributos de categorias
-exports.getattribute = (req, next) => {
+exports.getattribute = (req, res, next) => {
     var bearer = 'Bearer ';
     var token = global.access_token;
     console.log(bearer + token);
@@ -24,10 +24,10 @@ exports.getattribute = (req, next) => {
     };
 
     axios(config)
-        .then(function (res) {
-            console.log(JSON.stringify(res.data));
+        .then(function (result) {
+            console.log(JSON.stringify(result.data));
             global.categoriedata = [];
-            global.categoriedata = res.data;
+            global.categoriedata = result.data;
         })
         .catch(function (error) {
             console.log(error);
