@@ -8,9 +8,9 @@ const controller = require('../controllers/index-controller');
 router.get('/login', controller.get);
 
 // pega o token e autentica
-router.get('/:code', controller.gettoken);
+router.get('/', controller.gettoken);
 
 //direciona para página inicial ccm dados de sessão
-router.get('/', controller.getuser);
+router.get('/home', controller.getuser);
 
 module.exports = router;

@@ -15,8 +15,7 @@ exports.get = (req, res, next) => {
 
 //usa o code para gerar o token
 exports.gettoken = (req, res, next) => {
-  var code = req.params.code;
-  console.log(code);
+  var code = req.query.code
 
   var data = JSON.stringify({
     "grant_type": "authorization_code",
