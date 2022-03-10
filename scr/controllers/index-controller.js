@@ -43,7 +43,7 @@ exports.gettoken = (req, res, next) => {
 
       console.log(res.data.access_token);
 
-      return next();
+      next.redirect('/home');
 
     })
     .catch(function (error) {
