@@ -4,6 +4,8 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/index-controller');
 
+//envia dados para a página de login
+router.get('/login', controller.get);
 
 // pega o token e autentica
 router.get('/', controller.gettoken);
