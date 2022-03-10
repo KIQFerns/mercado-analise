@@ -9,10 +9,9 @@ exports.getitem = (req, res, next) => {
     var token = global.access_token;
     console.log(bearer + token);
 
-    var url = 'https://api.mercadolibre.com/sites/MLB/search?category=';
-    var limit = '&limit=1000';
+    var url = 'https://api.mercadolibre.com/items/';
     var id = req.params.id;
-    console.log(url + id + limit);
+    console.log(url + id);
 
     var axios = require('axios');
 
