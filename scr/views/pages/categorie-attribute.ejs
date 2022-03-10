@@ -27,9 +27,9 @@
             <td>
                 <%= datacategorie.children_categories[item].total_items_in_this_category%>
             </td>
-            <td><a href="/categories/<%= datacategorie.children_categories[item].id%>/trends">Tendencias</a>&nbsp;&nbsp;&nbsp;</td>
+            <td><a href="/trends/<%= datacategorie.children_categories[item].id%>/trends">Tendencias</a>&nbsp;&nbsp;&nbsp;</td>
             <td><a href="/api/<%= datacategorie.children_categories[item].id%>/items">Items</a>&nbsp;&nbsp;&nbsp;</td>
-            <td><a href="/categories/<%= datacategorie.children_categories[item].id%>/20mais">Mais Vendidos</a>&nbsp;&nbsp;&nbsp;</td>
+            <td><a href="/highlights/<%= datacategorie.children_categories[item].id%>/20mais">Mais Vendidos</a>&nbsp;&nbsp;&nbsp;</td>
         </tr>
         <% } %>
     </table>

@@ -27,6 +27,8 @@ const itemRoute = require('./routes/item-route');
 const productRoute = require('./routes/product-route');
 const userRoute = require('./routes/user-route');
 const visitRoute = require('./routes/visit-route');
+const trendsRoute = require('./routes/trends-route');
+const highlightsRoute = require('./routes/highlights-route');
 
 app.use(bodyParser.json({
     limit: '1gb'
@@ -49,5 +51,7 @@ app.use('/items', itemRoute);
 app.use('/products', productRoute);
 app.use('/users', userRoute);
 app.use('/visits', visitRoute);
+app.use('/trends', trendsRoute);
+app.use('/highlights', highlightsRoute);
 
 module.exports = app;

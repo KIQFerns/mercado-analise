@@ -3,13 +3,13 @@
 const https = require('https');
 var axios = require('axios');
 
-// conteudo /atributos de categorias
-exports.getattribute = (req, res, next) => {
+// conteudo /mais vendidos de categorias
+exports.getmais = (req, res, next) => {
     var bearer = 'Bearer ';
     var token = global.access_token;
     console.log(bearer + token);
 
-    var url = 'https://api.mercadolibre.com/categories/';
+    var url = 'https://api.mercadolibre.com/highlights/MLB/category/';
     var id = req.params.id;
     console.log(url + id);
 
@@ -26,13 +26,13 @@ exports.getattribute = (req, res, next) => {
     axios(config)
         .then(function (res) {
             console.log(JSON.stringify(res.data));
-            global.categoriedata = [];
-            global.categoriedata = res.data;
+            global.maisdata = [];
+            global.maisdata = res.data;
         })
         .catch(function (error) {
             console.log(error);
         });
 
-    res.render('pages/categorie-attribute', { datacategorie: global.categoriedata });
+    res.render('pages/categorie-20mais', { datamais: global.maisdata });
     return;
 };
