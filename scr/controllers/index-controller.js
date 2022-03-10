@@ -69,14 +69,14 @@ exports.getuser = (req, res, next) => {
   };
 
   axios(config)
-    .then(function (res) {
-      var data = JSON.stringify(res.data);
-      console.log(JSON.stringify(res.data));
+    .then(function (result) {
+      var data = JSON.stringify(result.data);
+      console.log(JSON.stringify(result.data));
 
-      global.first_name = res.data.first_name;
-      global.last_name = res.data.last_name;
+      global.first_name = result.data.first_name;
+      global.last_name = result.data.last_name;
 
-      res.render('pages/index', {
+      result.render('pages/index', {
         user_id: global.user_id,
         first_name: global.first_name,
         last_name: global.last_name
