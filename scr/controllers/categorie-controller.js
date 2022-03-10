@@ -13,8 +13,6 @@ exports.getattribute = (req, res) => {
     var id = req.params.id;
     console.log(url + id);
 
-    var axios = require('axios');
-
     var config = {
         method: 'get',
         url: url + id,
@@ -32,7 +30,5 @@ exports.getattribute = (req, res) => {
         .catch(function (error) {
             console.log(error);
         });
-
-    res.render('pages/categorie-attribute', { datacategorie: result.data });
-    return;
+    res.render('pages/categorie-attribute', { datacategorie: global.categoriedata });
 };
