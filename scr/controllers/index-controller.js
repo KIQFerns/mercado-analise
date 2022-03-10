@@ -52,6 +52,7 @@ exports.gettoken = (req, res, next) => {
     });
 };
 
+//renderiza a página inicial
 exports.getuser = (req, res, next) => {
   var bearer = 'Bearer ';
   var token = global.access_token;
@@ -74,14 +75,14 @@ exports.getuser = (req, res, next) => {
 
       global.first_name = res.data.first_name;
       global.last_name = res.data.last_name;
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-    
-    res.render('pages/index', {
+
+      res.render('pages/index', {
         user_id: global.user_id,
         first_name: global.first_name,
         last_name: global.last_name
       });
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 };
