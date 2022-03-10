@@ -19,7 +19,6 @@ app.set('view engine', 'ejs');
 app.set('views', './scr/views');
 
 //carrega as rotas
-const loginRoute = require('./routes/login-route');
 const indexRoute = require('./routes/index-route');
 const apiRoute = require('./routes/api-route');
 const categorieRoute = require('./routes/categorie-route');
@@ -44,7 +43,6 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', indexRoute);
-app.use('/login', loginRoute);
 app.use('/api', apiRoute);
 app.use('/categories', categorieRoute);
 app.use('/items', itemRoute);
