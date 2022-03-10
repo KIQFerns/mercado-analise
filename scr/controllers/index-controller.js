@@ -75,14 +75,13 @@ exports.getuser = (req, res, next) => {
 
       global.first_name = result.data.first_name;
       global.last_name = result.data.last_name;
-
-      result.render('pages/index', {
-        user_id: global.user_id,
-        first_name: global.first_name,
-        last_name: global.last_name
-      });
     })
     .catch(function (error) {
       console.log(error);
+    });
+    result.render('pages/index', {
+      user_id: global.user_id,
+      first_name: global.first_name,
+      last_name: global.last_name
     });
 };
