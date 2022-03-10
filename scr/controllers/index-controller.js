@@ -35,7 +35,7 @@ exports.gettoken = (req, res, next) => {
   };
 
   axios(config)
-    .then(function (res) {
+    .then(function (res, next) {
       console.log(JSON.stringify(res.data));
 
       global.user_id = res.data.user_id;
@@ -43,7 +43,7 @@ exports.gettoken = (req, res, next) => {
 
       console.log(res.data.access_token);
 
-      res.redirect('/home');
+      next.redirect('/home');
 
     })
     .catch(function (error) {
