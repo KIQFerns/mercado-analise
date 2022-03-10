@@ -5,7 +5,7 @@ const https = require('https');
 var axios = require('axios');
 
 // conteudo /sites
-exports.get = (req, res, next) => {
+exports.get = async (req, res, next) => {
   var bearer = 'Bearer ';
   var token = global.access_token;
   console.log(bearer + token);
@@ -20,7 +20,7 @@ exports.get = (req, res, next) => {
     }
   };
 
-  axios(config)
+  await axios(config)
     .then(function (res) {
       console.log(JSON.stringify(res.data));
       global.sitedata = [];
@@ -35,7 +35,7 @@ exports.get = (req, res, next) => {
 };
 
 // conteudo /categorias
-exports.getcategorie = (req, res, next) => {
+exports.getcategorie = async (req, res, next) => {
   var bearer = 'Bearer ';
   var token = global.access_token;
   console.log(bearer + token);
@@ -50,7 +50,7 @@ exports.getcategorie = (req, res, next) => {
       }
   };
 
-  axios(config)
+  await axios(config)
       .then(function (res) {
           console.log(JSON.stringify(res.data));
           global.data = [];
@@ -65,7 +65,7 @@ exports.getcategorie = (req, res, next) => {
 };
 
 // conteudo /items de categorias
-exports.getitems = (req, res, next) => {
+exports.getitems = async (req, res, next) => {
   var bearer = 'Bearer ';
   var token = global.access_token;
   console.log(bearer + token);
@@ -84,7 +84,7 @@ exports.getitems = (req, res, next) => {
       }
   };
 
-  axios(config)
+  await axios(config)
       .then(function (res) {
           console.log(JSON.stringify(res.data));
           global.itemsdata = [];

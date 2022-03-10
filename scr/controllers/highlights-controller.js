@@ -4,7 +4,7 @@ const https = require('https');
 var axios = require('axios');
 
 // conteudo /mais vendidos de categorias
-exports.getmais = (req, res, next) => {
+exports.getmais = async (req, res, next) => {
     var bearer = 'Bearer ';
     var token = global.access_token;
     console.log(bearer + token);
@@ -23,7 +23,7 @@ exports.getmais = (req, res, next) => {
         }
     };
 
-    axios(config)
+    await axios(config)
         .then(function (res) {
             console.log(JSON.stringify(res.data));
             global.maisdata = [];

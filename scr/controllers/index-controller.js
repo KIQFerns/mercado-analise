@@ -14,7 +14,7 @@ exports.get = (req, res, next) => {
 };
 
 //usa o code para gerar o token
-exports.gettoken = (req, res, next) => {
+exports.gettoken = async (req, res, next) => {
   var code = req.query.code
 
   var data = JSON.stringify({
@@ -34,7 +34,7 @@ exports.gettoken = (req, res, next) => {
     data: data
   };
 
-  axios(config)
+  await axios(config)
     .then(function (res, next) {
       console.log(JSON.stringify(res.data));
 
@@ -53,7 +53,7 @@ exports.gettoken = (req, res, next) => {
 };
 
 //renderiza a página inicial
-exports.getuser = (req, res, next) => {
+exports.getuser = async (req, res, next) => {
   var bearer = 'Bearer ';
   var token = global.access_token;
   console.log(bearer + token);
@@ -68,7 +68,7 @@ exports.getuser = (req, res, next) => {
     }
   };
 
-  axios(config)
+  await axios(config)
     .then(function (res) {
       var data = JSON.stringify(res.data);
       console.log(JSON.stringify(res.data));
