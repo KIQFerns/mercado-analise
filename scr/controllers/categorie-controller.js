@@ -23,10 +23,11 @@ exports.getattribute = (req, res, next) => {
         }
     };
 
+    global.categoriedata = [];
+
     axios(config)
         .then(function (result) {
             console.log(JSON.stringify(result.data));
-            global.categoriedata = [];
             global.categoriedata = result.data;
         })
         .catch(function (error) {
