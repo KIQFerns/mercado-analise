@@ -43,7 +43,7 @@ exports.gettoken = (req, res, next) => {
 
       console.log(res.data.access_token);
 
-      return next();
+      res.redirect('/home');
 
     })
     .catch(function (error) {
@@ -53,7 +53,7 @@ exports.gettoken = (req, res, next) => {
 };
 
 //renderiza a página inicial
-exports.getuser = (req, res, next, result) => {
+exports.getuser = (req, res, next) => {
   var bearer = 'Bearer ';
   var token = global.access_token;
   console.log(bearer + token);
@@ -69,7 +69,7 @@ exports.getuser = (req, res, next, result) => {
   };
 
   axios(config)
-    .then(function (res, result) {
+    .then(function (res) {
       var data = JSON.stringify(res.data);
       console.log(JSON.stringify(res.data));
 
@@ -79,9 +79,10 @@ exports.getuser = (req, res, next, result) => {
     .catch(function (error) {
       console.log(error);
     });
-    result.render('pages/index', {
-      user_id: global.user_id,
-      first_name: global.first_name,
-      last_name: global.last_name
-    });
+    
+    res.render('pages/index', {
+        user_id: global.user_id,
+        first_name: global.first_name,
+        last_name: global.last_name
+      });
 };

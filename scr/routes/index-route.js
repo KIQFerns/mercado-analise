@@ -11,6 +11,6 @@ router.get('/login', controller.get);
 router.get('/', controller.gettoken);
 
 //direciona para página inicial ccm dados de sessão
-router.get('/', controller.getuser);
+router.get('/home', controller.getuser);
 
 module.exports = router;
