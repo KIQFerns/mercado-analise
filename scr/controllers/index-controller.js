@@ -21,7 +21,7 @@ exports.gettoken = (req, res, next) => {
     "grant_type": "authorization_code",
     "client_id": process.env.CLIENT_ID,
     "client_secret": process.env.CLIENT_SECRET,
-    "code": req.query.code,
+    "code": req.params.code,
     "redirect_uri": process.env.REDIRECT_URI
   });
 
