@@ -21,7 +21,7 @@ exports.getattribute = async (req, res) => {
         }
     };
 
-    axios(config)
+    await axios(config)
         .then(function (result) {
             console.log(JSON.stringify(result.data));
             global.categoriedata = [];
@@ -30,5 +30,5 @@ exports.getattribute = async (req, res) => {
         .catch(function (error) {
             console.log(error);
         });
-    await res.render('pages/categorie-attribute', { datacategorie: global.categoriedata });
+    res.render('pages/categorie-attribute', { datacategorie: global.categoriedata });
 };
