@@ -28,13 +28,11 @@ exports.getattribute = (req, res) => {
             console.log(JSON.stringify(result.data));
             global.categoriedata = [];
             global.categoriedata = result.data;
-
-            result.render('pages/categorie-attribute', { datacategorie: global.categoriedata });
-            
         })
         .catch(function (error) {
             console.log(error);
         });
 
+    res.render('pages/categorie-attribute', { datacategorie: result.data });
     return;
 };
