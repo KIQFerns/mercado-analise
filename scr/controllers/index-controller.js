@@ -53,7 +53,7 @@ exports.gettoken = (req, res, next) => {
 };
 
 //renderiza a página inicial
-exports.getuser = (req, res, next) => {
+exports.getuser = (req, res, next, result) => {
   var bearer = 'Bearer ';
   var token = global.access_token;
   console.log(bearer + token);
