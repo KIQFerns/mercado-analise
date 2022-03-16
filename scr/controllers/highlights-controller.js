@@ -31,6 +31,7 @@ exports.getmais = async (req, res, next) => {
         })
         .catch(function (error) {
             console.log(error);
+            res.redirect('/login');
         });
 
     res.render('pages/highlights-categorie', { datamais: global.maisdata });

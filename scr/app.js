@@ -12,7 +12,7 @@ const router = express.Router();
 //Connecta ao banco
 //mongoose.connect(config.connectionString);
 
-// Carrega os Models
+// Carrega os Models cc
 
 // configura as views como ejs
 app.set('view engine', 'ejs');
