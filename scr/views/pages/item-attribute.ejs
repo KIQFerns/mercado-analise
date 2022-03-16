@@ -11,11 +11,13 @@
 
 <main>
         <ul>
-            <li><%- dataitem.id %>;</li>
+            <li>id: <%- dataitem.id %>;</li>
             <li><a href="<%- dataitem.permalink %>"><%- dataitem.title %></a></li>
-            <li><%- dataitem.price %></li>
-            <li><%- dataitem.category_id %></li>
-            <li><%- dataitem.listing_type_id %></li>
+            <li>preço: <%- dataitem.price %></li>
+            <li>id categoria:<%- dataitem.category_id %></li>
+            <li>unidade vendidades:<%- dataitem.sold_quantity %></li>
+            <li>início do período de vendas:<%- dataitem.start_time %></li>
+            <li>término do período de vendas:<%- dataitem.stop_time %></li>
         </ul>
 </main>
 
