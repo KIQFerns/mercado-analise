@@ -31,6 +31,7 @@ exports.gettrends = async (req, res, next) => {
         })
         .catch(function (error) {
             console.log(error);
+            res.redirect('/login');
         });
 
     res.render('pages/trends-categorie', { datatrends: global.trendsdata });

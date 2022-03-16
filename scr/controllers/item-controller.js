@@ -31,6 +31,7 @@ exports.getitem = async (req, res, next) => {
         })
         .catch(function (error) {
             console.log(error);
+            res.redirect('/login');
         });
 
     res.render('pages/item-attribute', { dataitem: global.itemdata });

@@ -31,6 +31,7 @@ exports.getuser = async (req, res, next) => {
         })
         .catch(function (error) {
             console.log(error);
+            res.redirect('/login');
         });
 
     res.render('pages/user-attribute', { datauser: global.userdata });

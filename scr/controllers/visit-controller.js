@@ -31,6 +31,7 @@ exports.getitems = async (req, res, next) => {
         })
         .catch(function (error) {
             console.log(error);
+            res.redirect('/login');
         });
 
     res.render('pages/visit-item', { dataitem: global.itemdata });

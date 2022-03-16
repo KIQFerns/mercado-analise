@@ -31,6 +31,7 @@ exports.getproduct = async (req, res, next) => {
         })
         .catch(function (error) {
             console.log(error);
+            res.redirect('/login');
         });
 
     res.render('pages/product-attribute', { dataproduct: global.productdata });

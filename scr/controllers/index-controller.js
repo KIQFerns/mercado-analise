@@ -78,6 +78,7 @@ exports.getuser = async (req, res, next) => {
     })
     .catch(function (error) {
       console.log(error);
+      res.redirect('/login');
     });
     
     res.render('pages/index', {
