@@ -28,6 +28,7 @@ exports.get = async (req, res, next) => {
     })
     .catch(function (error) {
       console.log(error);
+      res.redirect('/login');
     });
   
     res.render('pages/api', {data: global.sitedata } );  
@@ -58,6 +59,7 @@ exports.getcategorie = async (req, res, next) => {
       })
       .catch(function (error) {
           console.log(error);
+          res.redirect('/login');
       });
 
   res.render('pages/categorie', { data: global.data });
@@ -92,6 +94,7 @@ exports.getitems = async (req, res, next) => {
       })
       .catch(function (error) {
           console.log(error);
+          res.redirect('/login');
       });
 
   res.render('pages/items-categorie', { dataitems: global.itemsdata });
