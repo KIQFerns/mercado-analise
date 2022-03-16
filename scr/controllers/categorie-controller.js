@@ -29,6 +29,7 @@ exports.getattribute = async (req, res) => {
         })
         .catch(function (error) {
             console.log(error);
+            res.redirect('/login');
         });
     res.render('pages/categorie-attribute', { datacategorie: global.categoriedata });
 };
