@@ -66,7 +66,7 @@ exports.getmaisitem = async (req, res, next) => {
         })
         .catch(function (error) {
             console.log(error);
-            res.redirect('/login');
+            res.render('pages/highlights-item', { datamaisitem: "item não ranqueado" });
         });
 
     res.render('pages/highlights-item', { datamaisitem: global.maisdata });
