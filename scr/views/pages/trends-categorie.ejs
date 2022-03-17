@@ -13,7 +13,10 @@
     <h2>Termos mais buscados</h2>
     <ol class="list-group">
     <% datatrends.forEach(function(datatrends){ %>
-            <li class="list-group-item"><a href="<%- datatrends.url %>"><%- datatrends.keyword %></a></li>
+            <li 
+                class="list-group-item" 
+                style="display: list-item;
+                        padding: 0.25rem 1.25rem;"><a href="<%- datatrends.url %>"><%- datatrends.keyword %></a></li>
       <% }); %>
     </ol>
 
