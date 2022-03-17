@@ -11,14 +11,14 @@
 
 <main>
     <p>paginação:total:<%= dataitems.paging.total%>,offset:<%= dataitems.paging.offset%>,limit:<%= dataitems.paging.limit%></p>
-    <table>
+    <table class="table">
     <tr>
-        <th>id</th>
-        <th>nome</th>
-        <th>preço</th>
-        <th>clicks</th>
-        <th>Vendas</th>
-        <th>vendedor</th>        
+        <th scope="col">id</th>
+        <th scope="col">nome</th>
+        <th scope="col">preço</th>
+        <th scope="col">clicks</th>
+        <th scope="col">Vendas</th>
+        <th scope="col">vendedor</th>        
     </tr>
     <% for(var item in dataitems.results){%>
         <tr>
