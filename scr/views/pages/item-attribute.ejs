@@ -16,6 +16,7 @@
             <li>preço: <%- dataitem.price %></li>
             <li>id categoria:<%- dataitem.category_id %></li>
             <li>unidade vendidades:<%- dataitem.sold_quantity %></li>
+            <li>receita: <%- dataitem.price * dataitem.sold_quantity %></li>
             <li><a href="/visits/items/<%= dataitem.id %>">clicks</a></li>
             <hr>
             <li>início do período de vendas:<%- dataitem.start_time %></li>
