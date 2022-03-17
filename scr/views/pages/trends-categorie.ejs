@@ -11,9 +11,9 @@
 
 <main>
     <h2>Termos mais buscados</h2>
-    <ol>
+    <ol class="list-group list-group-numbered">
     <% datatrends.forEach(function(datatrends){ %>
-            <li><a href="<%- datatrends.url %>"><%- datatrends.keyword %></a></li>
+            <li class="list-group-item"><a href="<%- datatrends.url %>"><%- datatrends.keyword %></a></li>
       <% }); %>
     </ol>
 
