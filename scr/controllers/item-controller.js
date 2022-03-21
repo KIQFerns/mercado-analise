@@ -44,7 +44,7 @@ exports.getbusca = async (req, res, next) => {
     var token = global.access_token;
     console.log(bearer + token);
 
-    var url = 'https://api.mercadolibre.com/sites/MLA/search?q=';
+    var url = 'https://api.mercadolibre.com/sites/MLB/search?q=';
     var search = req.params.search;
     console.log(url + search);
 
