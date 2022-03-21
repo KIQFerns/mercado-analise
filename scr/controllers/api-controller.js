@@ -64,8 +64,8 @@ exports.getcategorie = async (req, res, next) => {
           res.redirect('/login');
       });
 
-  res.render('pages/categorie', { data: global.data });
-  return;
+  //res.render('pages/categorie', { data: global.data });
+  //return;
 };
 
 // conteudo /items de categorias
