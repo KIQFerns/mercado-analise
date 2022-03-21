@@ -56,7 +56,6 @@ exports.getcategorie = async (req, res, next) => {
           console.log(JSON.stringify(res.data));
           global.data = [];
           global.data = res.data;
-          return res;
           res.status(200).send(global.data);
       })
       .catch(function (error) {
