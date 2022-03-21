@@ -10,9 +10,18 @@
 </header>
 
 <main>
-    <ul>
-        <li><%- JSON.stringify(datasearch) %></li>
-    </ul>
+    <table class="table">
+        <tr>
+            <th scope="col">id</th>       
+        </tr>
+        <% for(var item in datasearch.results){%>
+            <tr>
+                <td>
+                    <%= datasearch.results[item].id%>
+                </td>
+            </tr>
+            <% } %>
+        </table>
 </main>
 
 <footer>
