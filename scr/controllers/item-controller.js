@@ -45,7 +45,7 @@ exports.postbusca = async (req, res, next) => {
     console.log(bearer + token);
 
     var url = 'https://api.mercadolibre.com/sites/MLB/search?q=';
-    var search = req.query.search;
+    var search = req.body.search;
     console.log(url + search);
 
     var axios = require('axios');
