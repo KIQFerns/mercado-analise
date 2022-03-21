@@ -52,7 +52,7 @@ exports.getbusca = async (req, res, next) => {
 
     var config = {
         method: 'get',
-        url: url + id,
+        url: url + search,
         headers: {
             'Authorization': bearer + token
         }
