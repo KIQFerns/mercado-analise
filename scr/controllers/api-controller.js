@@ -52,19 +52,18 @@ exports.getcategorie = async (req, res, next) => {
   };
 
   await axios(config)
-      .then(function (res, send) {
+      .then(function (res) {
           console.log(JSON.stringify(res.data));
           global.data = [];
           global.data = res.data;
-          send.json(global.data);
       })
       .catch(function (error) {
           console.log(error);
           res.redirect('/login');
       });
 
-  //res.render('pages/categorie', { data: global.data });
-  //return;
+  res.render('pages/categorie', { data: global.data });
+  return;
 };
 
 // conteudo /items de categorias
