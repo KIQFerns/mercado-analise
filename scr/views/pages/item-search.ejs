@@ -24,10 +24,10 @@
                     <%= datasearch.results[item].id%>
                 </td>
                 <td>
-                    <%= datasearch.results[item].title%>
+                    <a href="<%= datasearch.results[item].permalink%>"><%= datasearch.results[item].title%></a>
                 </td>
                 <td>
-                    <%= datasearch.results[item].seller.id%>
+                    <a href="<%= datasearch.results[item].seller.permalink%>"><%= datasearch.results[item].seller.id%></a>
                 </td>
                 <td>
                     <%= datasearch.results[item].price%>
