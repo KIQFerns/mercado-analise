@@ -52,11 +52,11 @@ exports.getcategorie = async (req, res, next) => {
   };
 
   await axios(config)
-      .then(function (res) {
+      .then(function (res, send) {
           console.log(JSON.stringify(res.data));
           global.data = [];
           global.data = res.data;
-          res.json(global.data);
+          send.json(global.data);
       })
       .catch(function (error) {
           console.log(error);
