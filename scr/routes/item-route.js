@@ -10,4 +10,7 @@ router.get('/:id', controller.getitem);
 // pega atributos de itens
 router.get('/busca/:search', controller.getbusca);
 
+// pega atributos de itens
+router.post('/busca', controller.postbusca);
+
 module.exports = router;
