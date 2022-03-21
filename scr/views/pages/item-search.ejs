@@ -12,12 +12,25 @@
 <main>
     <table class="table">
         <tr>
-            <th scope="col">id</th>       
+            <th scope="col">id</th>  
+            <th scope="col">title</th>
+            <th scope="col">vendedor</th> 
+            <th scope="col">price</th>
+            <th scope="col">unidades vendidas</th>      
         </tr>
         <% for(var item in datasearch.results){%>
             <tr>
                 <td>
                     <%= datasearch.results[item].id%>
+                </td>
+                <td>
+                    <%= datasearch.results[item].title%>
+                </td>
+                <td>
+                    <%= datasearch.results[item].seller.id%>
+                </td>
+                <td>
+                    <%= datasearch.results[item].price%>
                 </td>
             </tr>
             <% } %>
