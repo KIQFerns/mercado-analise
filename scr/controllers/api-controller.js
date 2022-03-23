@@ -98,7 +98,7 @@ exports.getitems = async (req, res, next) => {
       });
 
       console.log('olá mundo');
-      console.log(JSON.stringify(res.data.paging));
+      console.log(global.itemsdata.paging);
 
   res.render('pages/items-categorie', { dataitems: global.itemsdata });
   return;
