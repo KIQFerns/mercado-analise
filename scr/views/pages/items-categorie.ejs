@@ -34,21 +34,30 @@
             </td>
             <td>
                 <% 
+                var bearer = 'Bearer ';
+                var token = global.access_token;
+                console.log(bearer + token);
+
                 var url = 'https://api.mercadolibre.com/visits/items?ids=';
                 var id = dataitems.results[item].id;
-                
                 console.log(url + id);
 
-                const getVisits = () => {
-                    axios.get(url + id)
-                    .then(response => {
-                        var visits = response.data.data;
-                        console.log(`GET list users`, visits);
-                    })
-                    .catch(error => console.error(error));
+                var config = {
+                    method: 'get',
+                    url: url + id,
+                    headers: {
+                        'Authorization': bearer + token
+                    }
                 };
 
-                getVisits();
+                axios(config)
+                    .then(function (res) {
+                        console.log(JSON.stringify(res.data));
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+
                 %>
                 <p></p>
                 <!--<a href="/visits/items/<%= dataitems.results[item].id%>">clicks</a>-->
