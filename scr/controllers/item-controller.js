@@ -33,8 +33,9 @@ exports.getitem = async (req, res, next) => {
             console.log(error);
             res.redirect('/login');
         });
-    
-        console.log(res.data.paging.total);
+
+        console.log('olá mundo');
+        console.log(res.data.paging);
 
     res.render('pages/item-attribute', { dataitem: global.itemdata });
     return;
