@@ -115,16 +115,16 @@ exports.getitems = async (req, res, next) => {
 
     await axios(config)
         .then(function (res) {
-            console.log(JSON.stringify(res.data));
+            console.log(JSON.stringify(res.data(global.itemsdata.results[item].id)));
             global.visitdata = [];
             global.visitdata = res.data;
-            global.visitarray.push(global.visitdata);
+            //global.visitarray.push(global.visitdata);
         })
         .catch(function (error) {
             console.log(error);
         });
   }
-  console.log(visitarray);
+  //console.log(global.visitarray);
 
   res.render('pages/items-categorie', { dataitems: global.itemsdata });
   return;
