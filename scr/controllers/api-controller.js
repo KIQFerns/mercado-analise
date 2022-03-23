@@ -99,7 +99,32 @@ exports.getitems = async (req, res, next) => {
 
   for (var item in global.itemsdata.results) {
     console.log(global.itemsdata.results[item].id);
+    var url = 'https://api.mercadolibre.com/visits/items?ids=';
+    var id = global.itemsdata.results[item].id;
+    console.log(url + id);
+
+    var axios = require('axios');
+
+    var config = {
+        method: 'get',
+        url: url + id,
+        headers: {
+            'Authorization': bearer + token
+        }
+    };
+
+    await axios(config)
+        .then(function (res) {
+            console.log(JSON.stringify(res.data));
+            global.visitdata = [];
+            global.visitdata = res.data;
+            global.visitarray.push(res.data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
   }
+  console.log(visitarray);
 
   res.render('pages/items-categorie', { dataitems: global.itemsdata });
   return;
