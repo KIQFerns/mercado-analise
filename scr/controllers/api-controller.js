@@ -97,6 +97,9 @@ exports.getitems = async (req, res, next) => {
           res.redirect('/login');
       });
 
+      console.log('olá mundo');
+      console.log(res.data.paging);
+
   res.render('pages/items-categorie', { dataitems: global.itemsdata });
   return;
 };

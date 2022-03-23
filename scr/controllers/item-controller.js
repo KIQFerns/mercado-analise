@@ -28,8 +28,6 @@ exports.getitem = async (req, res, next) => {
             console.log(JSON.stringify(res.data));
             global.itemdata = [];
             global.itemdata = res.data;
-            console.log('olá mundo');
-            console.log(res.data.paging);
         })
         .catch(function (error) {
             console.log(error);
