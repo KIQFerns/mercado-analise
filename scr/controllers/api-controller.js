@@ -97,7 +97,7 @@ exports.getitems = async (req, res, next) => {
           res.redirect('/login');
       });
 
-  for (var item in dataitems.results) {
+  for (var item in global.itemsdata.results) {
     console.log(global.itemsdata.results[item].id);
   }
 
