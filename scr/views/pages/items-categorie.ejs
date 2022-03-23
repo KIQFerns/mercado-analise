@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../partials/head'); %>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body class="container">
 
@@ -32,24 +33,20 @@
                 <%= dataitems.results[item].price%>
             </td>
             <td>
-                <script>
-                    const BASE_URL = 'https://api.mercadolibre.com/visits/items?ids=<%= dataitems.results[item].id%>';
+                <% 
+                var url = 'https://api.mercadolibre.com/visits/items?ids=';
+                var id = dataitems.results[item].id;
+                
+                console.log(url + id);
 
-                    const getTodoItems = async () => {
-                    try {
-                        const response = await axios.get(`${BASE_URL}`);
-
-                        const todoItems = response.data;
-
-                        console.log(`GET: Here's the list of todos`, todoItems);
-
-                        return todoItems;
-                    } catch (errors) {
-                        console.error(errors);
-                    }
-                    };
-                </script>
-                <p><%= todoItems %></p>
+                axios.get(url + id)
+                .then(response => {
+                    const visits = response.data.data;
+                    console.log(`GET list users`, visits);
+                })
+                .catch(error => console.error(error));
+                %>
+                <p><% visits %></p>
                 <!--<a href="/visits/items/<%= dataitems.results[item].id%>">clicks</a>-->
             </td>
             <td>
