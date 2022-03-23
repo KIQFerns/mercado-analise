@@ -34,7 +34,7 @@ exports.getitem = async (req, res, next) => {
             res.redirect('/login');
         });
     
-        console.log(JSON.stringify(res.data.results.id));
+        console.log(res.data.paging.total);
 
     res.render('pages/item-attribute', { dataitem: global.itemdata });
     return;
