@@ -118,7 +118,7 @@ exports.getitems = async (req, res, next) => {
             console.log(JSON.stringify(res.data));
             global.visitdata = [];
             global.visitdata = res.data;
-            global.visitarray.push(res.data);
+            global.visitarray.push(global.visitdata);
         })
         .catch(function (error) {
             console.log(error);
