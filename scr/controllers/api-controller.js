@@ -96,6 +96,8 @@ exports.getitems = async (req, res, next) => {
           console.log(error);
           res.redirect('/login');
       });
+  
+  global.visitarray = [];
 
   for (var item in global.itemsdata.results) {
     console.log(global.itemsdata.results[item].id);
@@ -118,13 +120,13 @@ exports.getitems = async (req, res, next) => {
             console.log(JSON.stringify(res.data));
             global.visitdata = [];
             global.visitdata = res.data;
-            //global.visitarray.push(global.visitdata);
+            global.visitarray.push(res.data);
         })
         .catch(function (error) {
             console.log(error);
         });
   }
-  //console.log(global.visitarray);
+  console.log(global.visitarray);
 
   res.render('pages/items-categorie', { dataitems: global.itemsdata });
   return;
