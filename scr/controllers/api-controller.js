@@ -97,8 +97,9 @@ exports.getitems = async (req, res, next) => {
           res.redirect('/login');
       });
 
-      console.log('olá mundo');
-      console.log(global.itemsdata.results[1].id);
+  for (var item in dataitems.results) {
+    console.log(global.itemsdata.results[item].id);
+  }
 
   res.render('pages/items-categorie', { dataitems: global.itemsdata });
   return;
