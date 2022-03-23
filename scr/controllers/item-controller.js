@@ -33,6 +33,8 @@ exports.getitem = async (req, res, next) => {
             console.log(error);
             res.redirect('/login');
         });
+    
+    console.log(global.itemdata.results[1].id);
 
     res.render('pages/item-attribute', { dataitem: global.itemdata });
     return;
