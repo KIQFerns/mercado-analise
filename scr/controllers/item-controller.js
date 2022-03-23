@@ -28,14 +28,13 @@ exports.getitem = async (req, res, next) => {
             console.log(JSON.stringify(res.data));
             global.itemdata = [];
             global.itemdata = res.data;
+            console.log('olá mundo');
+            console.log(res.data.paging);
         })
         .catch(function (error) {
             console.log(error);
             res.redirect('/login');
         });
-
-        console.log('olá mundo');
-        console.log(res.data.paging);
 
     res.render('pages/item-attribute', { dataitem: global.itemdata });
     return;
