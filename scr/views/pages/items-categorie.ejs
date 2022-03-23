@@ -32,7 +32,40 @@
                 <%= dataitems.results[item].price%>
             </td>
             <td>
-                <a href="/visits/items/<%= dataitems.results[item].id%>">clicks</a>
+                <%= 
+
+                const https = require('https');
+                var axios = require('axios');
+
+                var bearer = 'Bearer ';
+                var token = global.access_token;
+                console.log(bearer + token);
+            
+                var url = 'https://api.mercadolibre.com/visits/items?ids=';
+                var id = dataitems.results[item].id;
+                console.log(url + id);
+            
+                var axios = require('axios');
+            
+                var config = {
+                    method: 'get',
+                    url: url + id,
+                    headers: {
+                        'Authorization': bearer + token
+                    }
+                };
+            
+                await axios(config)
+                    .then(function (res) {
+                        console.log(JSON.stringify(res.data));
+                        var dataitem = res.data;
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            }; %>
+                <p>JSON.stringify(dataitem)</p>>
+                <!--<a href="/visits/items/<%= dataitems.results[item].id%>">clicks</a>-->
             </td>
             <td>
                 <%= dataitems.results[item].sold_quantity%>

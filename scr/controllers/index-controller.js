@@ -7,7 +7,7 @@ var axios = require('axios');
 exports.get = (req, res, next) => {
   res.render('login', {
       title: "APP MeLi - análise de Mercado e concorrência",
-      version: "0.0.2",
+      version: "0.2.8",
       CLIENT_ID: process.env.CLIENT_ID,
       REDIRECT_URI: process.env.REDIRECT_URI
   });
