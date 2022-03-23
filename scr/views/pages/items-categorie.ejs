@@ -39,12 +39,16 @@
                 
                 console.log(url + id);
 
-                axios.get(url + id)
-                .then(response => {
-                    const visits = response.data.data;
-                    console.log(`GET list users`, visits);
-                })
-                .catch(error => console.error(error));
+                const getVisits = () => {
+                    axios.get(url + id)
+                    .then(response => {
+                        var visits = response.data.data;
+                        console.log(`GET list users`, visits);
+                    })
+                    .catch(error => console.error(error));
+                };
+
+                getVisits();
                 %>
                 <p></p>
                 <!--<a href="/visits/items/<%= dataitems.results[item].id%>">clicks</a>-->
