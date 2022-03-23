@@ -32,7 +32,25 @@
                 <%= dataitems.results[item].price%>
             </td>
             <td>
-                <a href="/visits/items/<%= dataitems.results[item].id%>">clicks</a>
+                <script>
+                    const BASE_URL = 'https://api.mercadolibre.com/visits/items?ids=<%= dataitems.results[item].id%>';
+
+                    const getTodoItems = async () => {
+                    try {
+                        const response = await axios.get(`${BASE_URL}`);
+
+                        const todoItems = response.data;
+
+                        console.log(`GET: Here's the list of todos`, todoItems);
+
+                        return todoItems;
+                    } catch (errors) {
+                        console.error(errors);
+                    }
+                    };
+                </script>
+                <p><%= todoItems %></p>
+                <!--<a href="/visits/items/<%= dataitems.results[item].id%>">clicks</a>-->
             </td>
             <td>
                 <%= dataitems.results[item].sold_quantity%>
