@@ -115,7 +115,7 @@ exports.getitems = async (req, res, next) => {
 
     await axios(config)
         .then(function (res) {
-            console.log(JSON.stringify(res.data.id));
+            console.log(JSON.stringify(res.data));
             global.visitdata = [];
             global.visitdata = res.data;
             //global.visitarray.push(global.visitdata);
