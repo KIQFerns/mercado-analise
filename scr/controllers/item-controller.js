@@ -60,7 +60,7 @@ exports.postbusca = async (req, res, next) => {
 
     await axios(config)
         .then(function (res) {
-            //console.log(JSON.stringify(res.data));
+            console.log(JSON.stringify(res.data));
             global.itemdata = [];
             global.searchdata = res.data;
         })
