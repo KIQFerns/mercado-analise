@@ -33,7 +33,7 @@
                     <a href="<%= datasearch.results[item].seller.permalink%>"><%= datasearch.results[item].seller.id%></a>
                 </td>
                 <td>
-                    <%= datasearch.results[item].price%>
+                    <% price = datasearch.results[item].price %> <%= datasearch.results[item].price %>
                 </td>
                 <td>
                     <% sold = datasearch.results[item].sold_quantity %> <%= datasearch.results[item].sold_quantity %>
@@ -42,10 +42,10 @@
                     <% clicks = Object.values(datavisits[item]) %> <%= Object.values(datavisits[item]) %>
                 </td>
                 <td>
-                    <p><% conversao = sold / clicks %> <%= conversao %></p>
+                    <% conversao = sold / clicks %> <%= Math.round(conversao, -3) %>
                 </td>
                 <td>
-
+                    <% receita = price * clicks %> <%= Math.round(receita, -3) %>
                 </td>
             </tr>
             <% } %>
