@@ -32,7 +32,7 @@
                 <%= dataitems.results[item].price %>
             </td>
             <td>
-                <%= JSON.stringify(datavisits[item]) %>
+                <%= Object.values(JSON.stringify(datavisits[item])) %>
                 <!--<a href="/visits/items/<%= dataitems.results[item].id%>">clicks</a>-->
             </td>
             <td>
