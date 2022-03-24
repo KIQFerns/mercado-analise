@@ -10,14 +10,13 @@
 </header>
 
 <main>
-    <p><%= datavisits %></p>
     <p>paginação:total:<%= dataitems.paging.total%>,offset:<%= dataitems.paging.offset%>,limit:<%= dataitems.paging.limit%></p>
     <table class="table">
     <tr>
         <th scope="col">id</th>
         <th scope="col">nome</th>
         <th scope="col">preço</th>
-        <th scope="col">click</th>
+        <th scope="col">clicks</th>
         <th scope="col">Vendas</th>
         <th scope="col">vendedor</th>        
     </tr>
@@ -30,7 +29,7 @@
                 <a href="<%= dataitems.results[item].permalink%>"><%= dataitems.results[item].title%></a>
             </td>
             <td>
-                <%= dataitems.results[item].price%>
+                <%= dataitems.results[item].price %>
             </td>
             <td>
                 <% id = dataitems.results[item].id %> <%= datavisits.id %>
