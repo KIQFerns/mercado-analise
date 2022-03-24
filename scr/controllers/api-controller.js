@@ -128,7 +128,7 @@ exports.getitems = async (req, res, next) => {
   }
   console.log(global.visitarray);
   JSON.stringify(global.visitarray);
-  JSON.stringify(global.itemsdata);
+  JSON.stringify(global.visitarray);
   
   res.render('pages/items-categorie', { dataitems: global.itemsdata , datavisits: global.visitarray });
   return;
