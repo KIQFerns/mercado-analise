@@ -42,10 +42,10 @@
                     <% clicks = Object.values(datavisits[item]) %> <%= Object.values(datavisits[item]) %>
                 </td>
                 <td>
-                    <% conversao = sold / clicks %> <%= Math.round(conversao, -3) %>
+                    <% conversao = sold / clicks %> <%= conversao.toFixed(3) %>
                 </td>
                 <td>
-                    <% receita = price * clicks %> <%= Math.round(receita, -3) %>
+                    <% receita = price * clicks %> <%= receita.toFixed() %>
                 </td>
             </tr>
             <% } %>
