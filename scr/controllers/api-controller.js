@@ -120,6 +120,7 @@ exports.getitems = async (req, res, next) => {
             console.log(JSON.stringify(res.data));
             global.visitdata = [];
             global.visitdata = res.data;
+            res.data.slice(1, -1)
             global.visitarray.push(res.data);
         })
         .catch(function (error) {
