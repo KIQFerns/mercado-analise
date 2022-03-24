@@ -10,7 +10,6 @@
 </header>
 
 <main>
-    <p><%= JSON.stringify(datavisits) %></p>
     <p>paginação:total:<%= dataitems.paging.total%>,offset:<%= dataitems.paging.offset%>,limit:<%= dataitems.paging.limit%></p>
     <table class="table">
     <tr>
@@ -33,7 +32,7 @@
                 <%= dataitems.results[item].price %>
             </td>
             <td>
-                <% id = dataitems.results[item].id %><%= datavisits.MLB1440414114 %>
+                <% id = dataitems.results[item].id %><%= JSON.stringify(datavisits.id) %>
                 <!--<a href="/visits/items/<%= dataitems.results[item].id%>">clicks</a>-->
             </td>
             <td>
