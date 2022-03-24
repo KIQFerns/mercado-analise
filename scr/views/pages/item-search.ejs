@@ -17,7 +17,9 @@
             <th scope="col">vendedor</th> 
             <th scope="col">price</th>
             <th scope="col">vendas</th>
-            <th scope="col">clicks</th>      
+            <th scope="col">clicks</th>
+            <th scope="col">Conversão</th>
+            <th scope="col">Receita</th>         
         </tr>
         <% for(var item in datasearch.results){%>
             <tr>
@@ -34,10 +36,16 @@
                     <%= datasearch.results[item].price%>
                 </td>
                 <td>
-                    <%= datasearch.results[item].sold_quantity%>
+                    <%= datasearch.results[item].sold_quantity %>
                 </td>
                 <td>
                     <%= Object.values(datavisits[item]) %>
+                </td>
+                <td>
+                    <% conversao = datasearch.results[item].sold_quantity / Object.values(datavisits[item]) %>
+                </td>
+                <td>
+
                 </td>
             </tr>
             <% } %>
