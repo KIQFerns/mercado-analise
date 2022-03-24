@@ -119,7 +119,7 @@ exports.getitems = async (req, res, next) => {
         .then(function (res) {
             console.log(JSON.stringify(res.data));
             global.visitdata = [];
-            global.visitdata = JSON.stringify(res.data);
+            global.visitdata = res.data;
             global.visitarray.push(res.data);
         })
         .catch(function (error) {
