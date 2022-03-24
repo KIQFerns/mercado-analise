@@ -39,10 +39,10 @@
                     <% sold = datasearch.results[item].sold_quantity %> <%= datasearch.results[item].sold_quantity %>
                 </td>
                 <td>
-                    <% cliks = Object.values(datavisits[item]) %> <%= Object.values(datavisits[item]) %>
+                    <% clicks = Object.values(datavisits[item]) %> <%= Object.values(datavisits[item]) %>
                 </td>
                 <td>
-                    <% conversao = sold / cliks %> <%= sold %></%= clicks %>=<%= conversao %>
+                    <p><% conversao = sold / cliks %> <%= sold %>/<%= clicks %>=<%= conversao %></p>
                 </td>
                 <td>
 
