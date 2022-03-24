@@ -96,14 +96,45 @@ exports.getbusca = async (req, res, next) => {
     await axios(config)
         .then(function (res) {
             console.log(JSON.stringify(res.data));
-            global.itemdata = [];
+            global.searchdata = [];
             global.searchdata = res.data;
         })
         .catch(function (error) {
             console.log(error);
             res.redirect('/login');
         });
+    
+      global.visitarray = [];
 
-    res.render('pages/item-search', { datasearch: global.searchdata });
+  for (var item in global.searchdata.results) {
+    console.log(global.searchdata.results[item].id);
+    var url = 'https://api.mercadolibre.com/visits/items?ids=';
+    var id = global.searchdata.results[item].id;
+    console.log(url + id);
+
+    var axios = require('axios');
+
+    var config = {
+        method: 'get',
+        url: url + id,
+        headers: {
+            'Authorization': bearer + token
+        }
+    };
+
+    await axios(config)
+        .then(function (res) {
+            console.log(JSON.stringify(res.data));
+            global.visitdata = [];
+            global.visitdata = res.data;
+            global.visitarray.push(res.data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+  }
+  console.log(global.visitarray);     
+
+    res.render('pages/item-search', { datasearch: global.searchdata , datavisits: global.visitarray });
     return;
 };
