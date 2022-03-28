@@ -14,6 +14,6 @@ router.get('/busca/:search', controller.getbusca);
 router.post('/busca', controller.postbusca);
 
 // pega atributos de itens por busca com periodo de clicks
-//router.post('/buscaperiodo', controller.postbuscaperiodo);
+router.post('/buscaperiodo', controller.postbuscaperiodo);
 
 module.exports = router;
