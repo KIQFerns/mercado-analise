@@ -166,8 +166,40 @@ exports.postbuscaperiodo = async (req, res, next) => {
                 });
         }
         console.log(global.visitarray);
+
+        global.periodarray = [];
+
+        for (var item in global.searchdata.results) {
+            console.log(global.searchdata.results[item].id);
+            var url = 'https://api.mercadolibre.com/visits/items?ids=';
+            var period = '&date_from=2022-01-01&date_to=2022-02-01';
+            var id = global.searchdata.results[item].id;
+            console.log(url + id + period);
     
-        res.render('pages/item-search-period', { datasearch: global.searchdata, datavisits: global.visitarray });
+            var axios = require('axios');
+    
+            var config = {
+                method: 'get',
+                url: url + id,
+                headers: {
+                    'Authorization': bearer + token
+                }
+            };
+    
+            await axios(config)
+                .then(function (res) {
+                    console.log(JSON.stringify(res.data));
+                    global.perioddata = [];
+                    global.perioddata = res.data;
+                    global.periodarray.push(res.data);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+        console.log(global.periodarray);
+    
+        res.render('pages/item-search-period', { datasearch: global.searchdata, datavisits: global.visitarray, dataperiod: global.perioddata });
         return;
 };
 
