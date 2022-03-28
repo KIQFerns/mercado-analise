@@ -170,7 +170,7 @@ exports.postbuscaperiodo = async (req, res, next) => {
         global.periodarray = [];
 
             console.log(global.searchdata.results[item].id);
-            var url = 'https://api.mercadolibre.com/visits/items?ids=';
+            var url = 'https://api.mercadolibre.com/items/visits?ids=';
             var period = '&date_from=2022-01-01&date_to=2022-02-01';
             var id = global.searchdata.results[item].id;
             console.log(url + id + period);
