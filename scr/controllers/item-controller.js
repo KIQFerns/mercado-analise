@@ -187,8 +187,8 @@ exports.postbuscaperiodo = async (req, res, next) => {
             };
     
             await axios(newconfig)
-                .then(function (res) {
-                    console.log(JSON.stringify(res.data));
+                .then(function (newres) {
+                    console.log(JSON.stringify(newres.data));
                 })
                 .catch(function (error) {
                     console.log(error);
