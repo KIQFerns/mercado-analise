@@ -10,7 +10,6 @@
 </header>
 
 <main>
-    <%= JSON.stringify(dataperiod) %>
     <div class="card" style="margin: 5px 5px;padding: 5px 5px;">
         <strong>Pesquisar clicks entre intervalos de datas</strong><br>
         <form class="form-inline">
@@ -58,7 +57,7 @@
                     <% clicks = Object.values(datavisits[item]) %> <%= Object.values(datavisits[item]) %>
                 </td>
                 <td>
-
+                    <%= JSON.stringify(dataperiod[item]) %>
                 </td>
                 <td>
                     <% conversao = sold / clicks %> <%= conversao.toFixed(3) %>
