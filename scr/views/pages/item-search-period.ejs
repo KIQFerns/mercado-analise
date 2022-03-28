@@ -57,9 +57,9 @@
                     <% clicks = Object.values(datavisits[item]) %> <%= Object.values(datavisits[item]) %>
                 </td>
                 <td>
-                    <% if (Object.values(dataperiod[item]).UndefinedVariable) {
-                        Object.assign(Object.values(dataperiod[item]).UndefinedVariable, {})
-                    } %>
+                    <% if (Object.values(dataperiod[item]) == null || Object.values(dataperiod[item]) == "undefined" ) {
+                        Object.assign(Object.values(dataperiod[item]), {})
+                    }%>
                     <%= Object.values(dataperiod[item]) %>
                 </td>
                 <td>
