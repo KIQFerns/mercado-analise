@@ -167,8 +167,6 @@ exports.postbuscaperiodo = async (req, res, next) => {
         }
         console.log(global.visitarray);
 
-        global.periodarray = [];
-
         for (var item in global.searchdata.results) {
             console.log(global.searchdata.results[item].id);
             var url = 'https://api.mercadolibre.com/items/visits?ids=';
