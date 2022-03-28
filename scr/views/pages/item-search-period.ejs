@@ -57,7 +57,7 @@
                     <% clicks = Object.values(datavisits[item]) %> <%= Object.values(datavisits[item]) %>
                 </td>
                 <td>
-                    <% string = JSON.stringify(dataperiod[item]) %> <%= string.total_visits %>
+                    <% string = JSON.stringify(dataperiod[item]) %> <%= JSON.stringify(string.total_visits) %>
                 </td>
                 <td>
                     <% conversao = sold / clicks %> <%= conversao.toFixed(3) %>
