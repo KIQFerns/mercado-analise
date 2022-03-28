@@ -178,7 +178,7 @@ exports.postbuscaperiodo = async (req, res, next) => {
     
             var axios = require('axios');
     
-            var config = {
+            var newconfig = {
                 method: 'get',
                 url: url + id + period,
                 headers: {
@@ -186,7 +186,7 @@ exports.postbuscaperiodo = async (req, res, next) => {
                 }
             };
     
-            await axios(config)
+            await axios(newconfig)
                 .then(function (res) {
                     console.log(JSON.stringify(res.data));
                 })
