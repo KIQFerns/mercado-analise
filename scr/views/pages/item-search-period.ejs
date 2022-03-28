@@ -10,6 +10,7 @@
 </header>
 
 <main>
+    <%= dataperiod %>
     <div class="card" style="margin: 5px 5px;padding: 5px 5px;">
         <strong>Pesquisar clicks entre intervalos de datas</strong><br>
         <form class="form-inline">
@@ -57,7 +58,7 @@
                     <% clicks = Object.values(datavisits[item]) %> <%= Object.values(datavisits[item]) %>
                 </td>
                 <td>
-                    <%= dataperiod[item].total_visits %>
+
                 </td>
                 <td>
                     <% conversao = sold / clicks %> <%= conversao.toFixed(3) %>
