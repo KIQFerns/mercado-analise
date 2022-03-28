@@ -180,7 +180,7 @@ exports.postbuscaperiodo = async (req, res, next) => {
     
             var config = {
                 method: 'get',
-                url: url + id,
+                url: url + id + period,
                 headers: {
                     'Authorization': bearer + token
                 }
