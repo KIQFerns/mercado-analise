@@ -163,7 +163,6 @@ exports.postbuscaperiodo = async (req, res, next) => {
                     console.log(error);
                 });
         }
-        console.log(global.visitarray);
 
         global.periodarray = [];
 
@@ -193,6 +192,7 @@ exports.postbuscaperiodo = async (req, res, next) => {
                     console.log(error);
                 });
         }
+        console.log(global.visitarray);
         console.log(global.periodarray);
     
         res.render('pages/item-search-period', { datasearch: global.searchdata, datavisits: global.visitarray, dataperiod: global.periodarray });
