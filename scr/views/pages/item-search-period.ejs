@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div class="card" style="margin: 5px 5px;padding: 5px 5px;">
+        <strong>Pesquisar clicks entre intervalos de datas</strong><br>
+        <form class="form-inline">
+            <div class="col-md-4 mb-3">
+            <label>Início:</label><input class="form-control" id="date" type="date">
+            </div>
+            <div class="col-md-4 mb-3">
+            <label>Término:</label><input class="form-control" id="date" type="date">
+            </div>
+            <div class="col-md-4 mb-3">
+            <button class="btn btn-primary" type="submit">Pesquisar</button>
+            </div>
+        </form>
+    </div>
+    <table class="table">
+        <tr>
+            <th scope="col">id</th>  
+            <th scope="col">title</th>
+            <th scope="col">vendedor</th> 
+            <th scope="col">price</th>
+            <th scope="col">vendas</th>
+            <th scope="col">clicks</th>
+            <th scope="col">clicks periodo</th>            
+            <th scope="col">Conversão</th>
+            <th scope="col">Receita</th>         
+        </tr>
+        <% for(var item in datasearch.results){%>
+            <tr>
+                <td>
+                    <%= datasearch.results[item].id%>
+                </td>
+                <td>
+                    <a href="<%= datasearch.results[item].permalink%>"><%= datasearch.results[item].title%></a>
+                </td>
+                <td>
+                    <a href="<%= datasearch.results[item].seller.permalink%>"><%= datasearch.results[item].seller.id%></a>
+                </td>
+                <td>
+                    <% price = datasearch.results[item].price %> <%= datasearch.results[item].price %>
+                </td>
+                <td>
+                    <% sold = datasearch.results[item].sold_quantity %> <%= datasearch.results[item].sold_quantity %>
+                </td>
+                <td>
+                    <% clicks = Object.values(datavisits[item]) %> <%= Object.values(datavisits[item]) %>
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    <% conversao = sold / clicks %> <%= conversao.toFixed(3) %>
+                </td>
+                <td>
+                    <% receita = price * clicks %> <%= receita.toFixed() %>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
