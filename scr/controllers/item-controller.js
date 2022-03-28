@@ -172,7 +172,7 @@ exports.postbuscaperiodo = async (req, res, next) => {
         for (var item in global.searchdata.results) {
             console.log(global.searchdata.results[item].id);
             var url = 'https://api.mercadolibre.com/items/visits?ids=';
-            var period = '&date_from=2022-01-01&date_to=2022-02-01';
+            var period = '&date_from=2022-01-01&date_to=2022-02-01&attributes=total_visits';
             var id = global.searchdata.results[item].id;
             console.log(url + id + period);
     
@@ -188,7 +188,7 @@ exports.postbuscaperiodo = async (req, res, next) => {
     
             await axios(config)
                 .then(function (res) {
-                    console.log(JSON.stringify(res.data.total_visits));
+                    console.log(JSON.stringify(res.data));
                     global.perioddata = [];
                     global.perioddata = res.data;
                     global.periodarray.push(res.data);
