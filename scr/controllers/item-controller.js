@@ -190,7 +190,7 @@ exports.postbuscaperiodo = async (req, res, next) => {
                 .then(function (res) {
                     console.log(JSON.stringify(res.data));
                     global.perioddata = [];
-                    global.perioddata = res.data;
+                    global.perioddata = JSON.stringify(res.data);
                     global.periodarray.push(res.data);
                 })
                 .catch(function (error) {
