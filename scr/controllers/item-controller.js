@@ -157,8 +157,6 @@ exports.postbuscaperiodo = async (req, res, next) => {
             await axios(config)
                 .then(function (res) {
                     console.log(JSON.stringify(res.data));
-                    global.visitdata = [];
-                    global.visitdata = res.data;
                     global.visitarray.push(res.data);
                 })
                 .catch(function (error) {
@@ -189,8 +187,6 @@ exports.postbuscaperiodo = async (req, res, next) => {
             await axios(config)
                 .then(function (res) {
                     console.log(JSON.stringify(res.data));
-                    global.perioddata = [];
-                    global.perioddata = res.data;
                     global.periodarray.push(res.data);
                 })
                 .catch(function (error) {
