@@ -10,7 +10,7 @@ router.get('/', controller.get);
 //envia lista de categorias
 router.get('/categories', controller.getcategorie);
 
-// itens da categoria por categoria
+// itens da categoria por busca
 router.get('/:id/items', controller.getitems);
 
 module.exports = router;
