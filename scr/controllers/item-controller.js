@@ -197,7 +197,7 @@ exports.postbuscaperiodo = async (req, res, next) => {
                     console.log(error);
                 });
         }
-        console.log(global.periodarray);
+        console.log(global.perioddata);
     
         res.render('pages/item-search-period', { datasearch: global.searchdata, datavisits: global.visitarray, dataperiod: global.perioddata });
         return;
