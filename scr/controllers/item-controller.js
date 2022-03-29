@@ -183,8 +183,8 @@ exports.postbuscaperiodo = async (req, res, next) => {
     
             await axios(config)
                 .then(function (res) {
-                    console.log(res.data);
-                    console.log(JSON.stringify(res.data));
+                    console.log(res.data[0]);
+                    console.log(JSON.stringify(res.data[0]));
                     global.periodarray.push(res.data);
                 })
                 .catch(function (error) {
