@@ -173,7 +173,7 @@ exports.postbuscaperiodo = async (req, res, next) => {
             var xcut = '&date_to=';
             var ycut = '&attributes=total_visits';
             var id = global.searchdata.results[item].id;
-            console.log(url + id + period);
+            console.log(url + id + period + start + xcut + end + ycut);
             var start = req.body.start;
             var end = req.body.end; 
             console.log(start);
