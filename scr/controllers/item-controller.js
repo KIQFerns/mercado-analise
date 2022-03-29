@@ -174,7 +174,8 @@ exports.postbuscaperiodo = async (req, res, next) => {
             console.log(url + id + period);
             var start = req.body.start;
             var end = req.body.end; 
-            console.log(start + end);
+            console.log(start);
+            console.log(end);
     
             var axios = require('axios');
     
