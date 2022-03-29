@@ -169,7 +169,9 @@ exports.postbuscaperiodo = async (req, res, next) => {
         for (var item in global.searchdata.results) {
             console.log(global.searchdata.results[item].id);
             var url = 'https://api.mercadolibre.com/items/visits?ids=';
-            var period = '&date_from=2022-01-01&date_to=2022-02-01&attributes=total_visits';
+            var period = '&date_from=';
+            var xcut = '&date_to=';
+            var ycut = '&attributes=total_visits';
             var id = global.searchdata.results[item].id;
             console.log(url + id + period);
             var start = req.body.start;
@@ -181,7 +183,7 @@ exports.postbuscaperiodo = async (req, res, next) => {
     
             var config = {
                 method: 'get',
-                url: url + id + period,
+                url: url + id + period + start + xcut + end + zcut,
                 headers: {
                     'Authorization': bearer + token
                 }
