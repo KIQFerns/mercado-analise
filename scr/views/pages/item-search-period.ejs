@@ -31,10 +31,10 @@
             <th scope="col">vendedor</th> 
             <th scope="col">price</th>
             <th scope="col">vendas</th>
-            <th scope="col">clicks</th>
-            <th scope="col">clicks periodo</th>            
+            <th scope="col">clicks</th>            
             <th scope="col">Conversão</th>
-            <th scope="col">Receita</th>         
+            <th scope="col">Receita</th>
+            <th scope="col">clicks periodo</th>         
         </tr>
         <% for(var item in datasearch.results){%>
             <tr>
@@ -57,13 +57,13 @@
                     <% clicks = Object.values(datavisits[item]) %> <%= Object.values(datavisits[item]) %>
                 </td>
                 <td>
-                    <%= Object.values(dataperiod[item]) %>
-                </td>
-                <td>
-                    <% conversao = sold / clicks %> <%= conversao.toFixed(3) %>
+                    <% conversao = sold / clicks * 100 %> <%= conversao.toFixed(3) %>
                 </td>
                 <td>
                     <% receita = price * clicks %> <%= receita.toFixed() %>
+                </td>
+                <td>
+                    <%= Object.values(dataperiod[item]) %>
                 </td>
             </tr>
             <% } %>
