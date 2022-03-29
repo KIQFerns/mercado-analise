@@ -185,7 +185,7 @@ exports.postbuscaperiodo = async (req, res, next) => {
                 .then(function (res) {
                     console.log(res.data);
                     var string = res.data;
-                    var cut = string.replace(/[|]/g,'');
+                    var cut = string.toString().replace(/[|]/g,'');
                     console.log(cut);
                     global.periodarray.push(cut);
                 })
