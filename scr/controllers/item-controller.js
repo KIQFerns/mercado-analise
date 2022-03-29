@@ -176,10 +176,6 @@ exports.postbuscaperiodo = async (req, res, next) => {
             console.log(url + id + period + start + xcut + end + ycut);
             var start = req.body.start;
             var end = req.body.end; 
-            console.log(start);
-            console.log(end);
-    
-            var axios = require('axios');
     
             var config = {
                 method: 'get',
@@ -191,7 +187,7 @@ exports.postbuscaperiodo = async (req, res, next) => {
     
             await axios(config)
                 .then(function (res) {
-                    //console.log(JSON.stringify(res.data));
+                    console.log(JSON.stringify(res.data));
                     global.periodarray.push(res.data);
                 })
                 .catch(function (error) {
