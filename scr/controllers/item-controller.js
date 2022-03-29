@@ -115,8 +115,6 @@ exports.postbuscaperiodo = async (req, res, next) => {
     var search = global.search;
     console.log(url + search);
 
-    var axios = require('axios');
-
     var config = {
         method: 'get',
         url: url + search,
@@ -143,8 +141,6 @@ exports.postbuscaperiodo = async (req, res, next) => {
             var url = 'https://api.mercadolibre.com/visits/items?ids=';
             var id = global.searchdata.results[item].id;
             console.log(url + id);
-    
-            var axios = require('axios');
     
             var config = {
                 method: 'get',
@@ -187,6 +183,7 @@ exports.postbuscaperiodo = async (req, res, next) => {
     
             await axios(config)
                 .then(function (res) {
+                    console.log(res.data);
                     console.log(JSON.stringify(res.data));
                     global.periodarray.push(res.data);
                 })
@@ -194,8 +191,8 @@ exports.postbuscaperiodo = async (req, res, next) => {
                     console.log(error);
                 });
         }
-        //console.log(global.visitarray);
-        //console.log(global.periodarray);
+        console.log(global.visitarray);
+        console.log(global.periodarray);
     
         res.render('pages/item-search-period', { datasearch: global.searchdata, datavisits: global.visitarray, dataperiod: global.periodarray });
         return;
