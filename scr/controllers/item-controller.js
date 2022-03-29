@@ -172,6 +172,9 @@ exports.postbuscaperiodo = async (req, res, next) => {
             var period = '&date_from=2022-01-01&date_to=2022-02-01&attributes=total_visits';
             var id = global.searchdata.results[item].id;
             console.log(url + id + period);
+            var start = req.body.start;
+            var end = req.body.end; 
+            console.log(start + end);
     
             var axios = require('axios');
     
@@ -185,15 +188,15 @@ exports.postbuscaperiodo = async (req, res, next) => {
     
             await axios(config)
                 .then(function (res) {
-                    console.log(JSON.stringify(res.data));
+                    //console.log(JSON.stringify(res.data));
                     global.periodarray.push(res.data);
                 })
                 .catch(function (error) {
                     console.log(error);
                 });
         }
-        console.log(global.visitarray);
-        console.log(global.periodarray);
+        //console.log(global.visitarray);
+        //console.log(global.periodarray);
     
         res.render('pages/item-search-period', { datasearch: global.searchdata, datavisits: global.visitarray, dataperiod: global.periodarray });
         return;
