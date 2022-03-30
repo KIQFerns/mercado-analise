@@ -132,7 +132,7 @@ exports.postbusca = async (req, res, next) => {
         console.log(global.sellerarray);
         console.log(global.visitarray);
     
-        res.render('pages/item-search', { datasearch: global.searchdata, datavisits: global.visitarray });
+        res.render('pages/item-search', { datasearch: global.searchdata, datavisits: global.visitarray, dataseller: global.sellerarray });
         return;
 };
 
