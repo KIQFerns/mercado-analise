@@ -100,6 +100,8 @@ exports.postbusca = async (req, res, next) => {
                 });
         }
 
+        global.sellerarray = [];
+
         for (var item in global.searchdata.results) {
             console.log(global.searchdata.results[item].seller.id);
             var url = 'https://api.mercadolibre.com/users/';
