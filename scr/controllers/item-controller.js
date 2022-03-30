@@ -99,6 +99,35 @@ exports.postbusca = async (req, res, next) => {
                     console.log(error);
                 });
         }
+
+        for (var item in global.searchdata.results) {
+            console.log(global.searchdata.results[item].seller.id);
+            var url = 'https://api.mercadolibre.com/users/';
+            var id = global.searchdata.results[item].seller.id;
+            console.log(url + id);
+    
+            var axios = require('axios');
+    
+            var config = {
+                method: 'get',
+                url: url + id,
+                headers: {
+                    'Authorization': bearer + token
+                }
+            };
+    
+            await axios(config)
+                .then(function (res) {
+                    console.log(JSON.stringify(res.data));
+                    global.sellerdata = [];
+                    global.sellerdata = res.data;
+                    global.sellerarray.push(res.data);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+        console.log(global.sellerarray);
         console.log(global.visitarray);
     
         res.render('pages/item-search', { datasearch: global.searchdata, datavisits: global.visitarray });
