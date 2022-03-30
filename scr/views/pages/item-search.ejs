@@ -28,7 +28,10 @@
         <tr>
             <th scope="col">id</th>  
             <th scope="col">title</th>
-            <th scope="col">vendedor</th> 
+            <th scope="col">vendedor</th>
+            <th scope="col">poder de venda</th>
+            <th scope="col">reputação</th>
+            <th scope="col">Transações finalizadas</th>
             <th scope="col">price</th>
             <th scope="col">vendas</th>
             <th scope="col">clicks</th>
@@ -45,6 +48,15 @@
                 </td>
                 <td>
                     <a href="<%= datasearch.results[item].seller.permalink%>"><%= dataseller[item].nickname%></a>
+                </td>
+                <td>
+                    <%= dataseller[item].seller_reputation.power_seller_status %>
+                </td>
+                <td>
+                    <%= dataseller[item].seller_reputation.level_id %>
+                </td>
+                <td>
+                    <%= dataseller[item].seller_reputation.transactions.completed %>
                 </td>
                 <td>
                     <% price = datasearch.results[item].price %> <%= datasearch.results[item].price %>
