@@ -79,13 +79,13 @@
                 <% for(var id in dataposition){%>
                     <% if (dataposition[id].id =  datasearch.results[item].id) { %>
                 <td>
-                    <%= dataposition[item].dimension %>
+                    <%= dataposition[id].dimension %>
                 </td>
                 <td>
-                    <%= dataposition[item].label %>
+                    <%= dataposition[id].label %>
                 </td>
                 <td>
-                    <%= dataposition[item].position %>
+                    <%= dataposition[id].position %>
                 </td>
                 <% } %>
             </tr>
