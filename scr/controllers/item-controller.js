@@ -134,7 +134,7 @@ exports.postbusca = async (req, res, next) => {
 
         for (var item in global.searchdata.results) {
             console.log(global.searchdata.results[item].seller.id);
-            var url = 'https://api.mercadolibre.com/highlights/MLB/category/';
+            var url = 'https://api.mercadolibre.com/highlights/MLB/item/';
             var id = global.searchdata.results[item].seller.id;
             console.log(url + id);
     
