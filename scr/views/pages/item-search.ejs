@@ -36,7 +36,10 @@
             <th scope="col">vendas</th>
             <th scope="col">clicks</th>
             <th scope="col">Conversão</th>
-            <th scope="col">Receita</th>         
+            <th scope="col">Receita</th>
+            <th scope="col">Ranqueamento</th>         
+            <th scope="col">Grupo</th>
+            <th scope="col">Posição</th>
         </tr>
         <% for(var item in datasearch.results){%>
             <tr>
@@ -72,6 +75,15 @@
                 </td>
                 <td>
                     <% receita = price * clicks %> <%= receita.toFixed() %>
+                </td>
+                <td>
+                    <%= dataposition[item].dimension %>
+                </td>
+                <td>
+                    <%= dataposition[item].label %>
+                </td>
+                <td>
+                    <%= dataposition[item].position %>
                 </td>
             </tr>
             <% } %>
