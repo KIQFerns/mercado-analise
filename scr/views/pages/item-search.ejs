@@ -77,7 +77,7 @@
                     <% receita = price * clicks %> <%= receita.toFixed() %>
                 </td>
                 <% for(var id in dataposition){%>
-                    <% if (dataposition[id].id =  datasearch.results[item].id) { %>
+                    <% if (dataposition[id].id ==  datasearch.results[item].id) { %>
                 <td>
                     <%= dataposition[id].dimension %>
                 </td>
