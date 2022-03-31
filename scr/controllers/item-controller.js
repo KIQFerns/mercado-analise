@@ -152,8 +152,9 @@ exports.postbusca = async (req, res, next) => {
                 .then(function (res) {
                     console.log(JSON.stringify(res.data));
                     global.positiondata = [];
-                    global.positiondata = res.data;
-                    global.positionarray.push(res.data);
+                    positiondata = res.data;
+                    positiondata.id = global.searchdata.results[item].id;
+                    global.positionarray.push(positiondata);
                 })
                 .catch(function (error) {
                     console.log(error);
