@@ -76,15 +76,18 @@
                 <td>
                     <% receita = price * clicks %> <%= receita.toFixed() %>
                 </td>
+                <% for(var id in dataposition){%>
+                    <% if (dataposition[id].id =  datasearch.results[item].id) { %>
                 <td>
-                    <!-- <%= dataposition[item].dimension %>  -->
+                    <%= dataposition[item].dimension %>
                 </td>
                 <td>
-                     <!-- <%= dataposition[item].label %> -->
+                    <%= dataposition[item].label %>
                 </td>
                 <td>
-                     <!-- <%= dataposition[item].position %> -->
+                    <%= dataposition[item].position %>
                 </td>
+                <% } %>
             </tr>
             <% } %>
         </table>
