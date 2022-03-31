@@ -135,7 +135,7 @@ exports.postbusca = async (req, res, next) => {
         for (var item in global.searchdata.results) {
             console.log(global.searchdata.results[item].seller.id);
             var url = 'https://api.mercadolibre.com/highlights/MLB/item/';
-            var id = global.searchdata.results[item].seller.id;
+            var id = global.searchdata.results[item].id;
             console.log(url + id);
     
             var axios = require('axios');
@@ -159,8 +159,8 @@ exports.postbusca = async (req, res, next) => {
                     console.log(error);
                 });
         }
-        console.log(global.sellerarray);
-        console.log(global.visitarray);
+        //console.log(global.sellerarray);
+        //console.log(global.visitarray);
         console.log(global.positionarray);
     
         res.render('pages/item-search', { datasearch: global.searchdata, datavisits: global.visitarray, dataseller: global.sellerarray, dataposition: global.positionarray });
