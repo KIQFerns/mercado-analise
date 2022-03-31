@@ -129,10 +129,41 @@ exports.postbusca = async (req, res, next) => {
                     console.log(error);
                 });
         }
+
+        global.positionarray = [];
+
+        for (var item in global.searchdata.results) {
+            console.log(global.searchdata.results[item].seller.id);
+            var url = 'https://api.mercadolibre.com/highlights/MLB/category/';
+            var id = global.searchdata.results[item].seller.id;
+            console.log(url + id);
+    
+            var axios = require('axios');
+    
+            var config = {
+                method: 'get',
+                url: url + id,
+                headers: {
+                    'Authorization': bearer + token
+                }
+            };
+    
+            await axios(config)
+                .then(function (res) {
+                    console.log(JSON.stringify(res.data));
+                    global.positiondata = [];
+                    global.positiondata = res.data;
+                    global.positionarray.push(res.data);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
         console.log(global.sellerarray);
         console.log(global.visitarray);
+        console.log(global.positionarray);
     
-        res.render('pages/item-search', { datasearch: global.searchdata, datavisits: global.visitarray, dataseller: global.sellerarray });
+        res.render('pages/item-search', { datasearch: global.searchdata, datavisits: global.visitarray, dataseller: global.sellerarray, dataposition: global.positionarray });
         return;
 };
 
